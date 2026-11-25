@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>GYANU AI — CBSE Class 9 Science Smart 3D Flashcards (668 Cards) | By Rishi Sir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --violet: #7c3aed;
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --amber: #f59e0b;
+      --danger: #ef4444;
+      --success: #10b981;
+      --bg-main: #f1f5f9;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #cbd5e1;
+      --header-grad: linear-gradient(135deg, #312e81 0%, #4f46e5 48%, #0d9488 100%);
+      --card-front-grad: linear-gradient(145deg, #ffffff 0%, #eef2ff 100%);
+      --card-back-grad: linear-gradient(145deg, #ecfdf5 0%, #ccfbf1 100%);
+      --shadow-md: 0 10px 26px rgba(15, 23, 42, 0.09);
+      --shadow-lg: 0 18px 40px rgba(79, 70, 229, 0.18);
+    }
+
+    body.dark-mode {
+      --bg-main: #090d16;
+      --card-bg: #131c31;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #2a3754;
+      --card-front-grad: linear-gradient(145deg, #162038 0%, #1e1b4b 100%);
+      --card-back-grad: linear-gradient(145deg, #0f292a 0%, #113836 100%);
+      --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 18px 42px rgba(0, 0, 0, 0.65);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.55;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding-bottom: 42px;
+    }
+
+    .app-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 14px;
+    }
+
+    /* ================= HEADER ================= */
+    .top-header {
+      background: var(--header-grad);
+      color: #ffffff;
+      border-radius: 22px;
+      padding: 18px 22px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .owl-logo {
+      width: 62px;
+      height: 62px;
+      background: #ffffff;
+      border-radius: 50%;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      border: 2.5px solid #5eead4;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .owl-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .brand-titles h1 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.22);
+    }
+
+    .brand-titles p {
+      font-size: 0.85rem;
+      opacity: 0.94;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .greeting-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(6px);
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-top: 6px;
+      border: 1px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      padding: 8px 13px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .switch-quiz-btn {
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      border: none;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+    }
+
+    /* ================= GAMIFICATION HUD ================= */
+    .hud-bar {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-color);
+      border-radius: 18px;
+      padding: 14px 18px;
+      margin-top: 14px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hud-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hud-stats {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .stat-chip {
+      background: var(--bg-main);
+      border: 1.5px solid var(--border-color);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .stat-chip.xp { border-color: #818cf8; color: #4338ca; background: #eef2ff; }
+    .stat-chip.streak { border-color: #fb923c; color: #c2410c; background: #fff7ed; }
+    .stat-chip.mastered { border-color: #34d399; color: #047857; background: #ecfdf5; }
+    body.dark-mode .stat-chip.xp { background: rgba(79,70,229,0.2); color: #a5b4fc; }
+    body.dark-mode .stat-chip.streak { background: rgba(249,115,22,0.2); color: #fdba74; }
+    body.dark-mode .stat-chip.mastered { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: var(--bg-main);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #4f46e5, #7c3aed, #14b8a6);
+      border-radius: 999px;
+      transition: width 0.35s ease;
+    }
+
+    /* ================= CONTROLS PANEL ================= */
+    .nav-panel {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      box-shadow: var(--shadow-md);
+      border: 1.5px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .branch-tabs, .tag-filters {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .pill-tab {
+      background: var(--bg-main);
+      color: var(--text-main);
+      border: 1.5px solid var(--border-color);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill-tab.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.28);
+    }
+
+    .pill-tab.tag-tab.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      box-shadow: 0 4px 10px rgba(13, 148, 136, 0.28);
+    }
+
+    .select-search-row {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 660px) {
+      .select-search-row { grid-template-columns: 1fr; }
+    }
+
+    .chapter-select, .search-input {
+      width: 100%;
+      padding: 10px 13px;
+      border-radius: 12px;
+      border: 2px solid var(--border-color);
+      background: var(--bg-main);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .chapter-select:focus, .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    .deck-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .deck-info {
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .tool-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tool-btn {
+      padding: 7px 13px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-main);
+      color: var(--text-main);
+      font-size: 0.79rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+
+    .tool-btn.shuffle-btn {
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 10px rgba(124, 58, 237, 0.28);
+    }
+
+    .tool-btn:hover { transform: translateY(-1px); }
+
+    /* ================= 3D FLASHCARD STAGE ================= */
+    .stage-wrapper {
+      margin-top: 16px;
+      perspective: 1200px;
+      touch-action: pan-y;
+    }
+
+    .flashcard-3d {
+      width: 100%;
+      min-height: 330px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.58s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+
+    .flashcard-3d.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      min-height: 330px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 24px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow-lg);
+      border: 2.5px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-front {
+      background: var(--card-front-grad);
+      border-color: #818cf8;
+    }
+
+    .card-back {
+      background: var(--card-back-grad);
+      border-color: #14b8a6;
+      transform: rotateY(180deg);
+    }
+
+    .face-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .face-badges {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .c-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 11px;
+      border-radius: 999px;
+      letter-spacing: 0.3px;
+    }
+
+    .c-badge.num { background: var(--primary); color: #fff; }
+    .c-badge.ans-label { background: var(--teal); color: #fff; }
+    .c-badge.type { background: rgba(124, 58, 237, 0.14); color: var(--violet); border: 1px solid rgba(124, 58, 237, 0.3); }
+    body.dark-mode .c-badge.type { color: #c4b5fd; }
+
+    .face-actions {
+      display: flex;
+      gap: 7px;
+    }
+
+    .mini-icon-btn {
+      height: 36px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.18s;
+    }
+
+    .mini-icon-btn:hover {
+      border-color: var(--primary);
+      transform: scale(1.03);
+    }
+
+    .face-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px 8px;
+    }
+
+    .question-text {
+      font-size: 1.32rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .answer-text {
+      font-size: 1.42rem;
+      font-weight: 800;
+      color: #0f766e;
+      line-height: 1.45;
+    }
+    body.dark-mode .answer-text { color: #5eead4; }
+
+    @media (max-width: 540px) {
+      .question-text { font-size: 1.12rem; }
+      .answer-text { font-size: 1.22rem; }
+      .card-face { padding: 18px 16px; min-height: 300px; }
+      .flashcard-3d { min-height: 300px; }
+    }
+
+    .clue-box {
+      display: none;
+      margin-top: 12px;
+      padding: 7px 14px;
+      border-radius: 12px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1.5px dashed #f59e0b;
+      color: #b45309;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+    body.dark-mode .clue-box { color: #fcd34d; }
+    .clue-box.show { display: inline-block; }
+
+    .face-bottom {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding-top: 6px;
+    }
+
+    .formula-pill {
+      display: inline-block;
+      background: linear-gradient(135deg, #e0e7ff, #ccfbf1);
+      color: #1e1b4b;
+      border: 1.5px solid #818cf8;
+      padding: 1px 8px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.94em;
+      margin: 1px 2px;
+    }
+
+    /* ================= CONFIDENCE RATING & NAVIGATION ================= */
+    .rating-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .rate-btn {
+      padding: 12px 10px;
+      border-radius: 14px;
+      border: 2px solid transparent;
+      font-size: 0.84rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-md);
+    }
+
+    .rate-btn span.sub { font-size: 0.69rem; font-weight: 600; opacity: 0.88; }
+    .rate-btn.hard { background: #fee2e2; color: #b91c1c; border-color: #fca5a5; }
+    .rate-btn.good { background: #fef3c7; color: #b45309; border-color: #fcd34d; }
+    .rate-btn.easy { background: #dcfce7; color: #047857; border-color: #6ee7b7; }
+    .rate-btn:hover { transform: translateY(-2px); }
+
+    body.dark-mode .rate-btn.hard { background: rgba(239,68,68,0.18); color: #fca5a5; border-color: #ef4444; }
+    body.dark-mode .rate-btn.good { background: rgba(245,158,11,0.18); color: #fcd34d; border-color: #f59e0b; }
+    body.dark-mode .rate-btn.easy { background: rgba(16,185,129,0.18); color: #6ee7b7; border-color: #10b981; }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .nav-btn {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 2px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .nav-btn.primary-nav {
+      background: linear-gradient(135deg, var(--primary), var(--violet));
+      color: #fff;
+      border: none;
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.28);
+    }
+
+    .nav-btn:hover { transform: translateY(-1px); }
+
+    /* ================= TOAST ================= */
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%) translateY(90px);
+      background: #0f172a;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer-card {
+      margin-top: 26px;
+      background: var(--header-grad);
+      color: #fff;
+      border-radius: 20px;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .wa-btn {
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* ================= NAME MODAL ================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9998;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal-box {
+      background: var(--card-bg);
+      border-radius: 22px;
+      padding: 24px;
+      width: 100%;
+      max-width: 390px;
+      border: 2px solid var(--primary);
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .modal-box h3 { font-size: 1.25rem; font-weight: 800; color: var(--primary); }
+    body.dark-mode .modal-box h3 { color: #a5b4fc; }
+    .modal-box p { font-size: 0.84rem; color: var(--text-muted); margin: 6px 0 14px; }
+    .modal-input {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 2px solid var(--border-color);
+      background: var(--bg-main);
+      color: var(--text-main);
+      font-size: 0.94rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      outline: none;
+    }
+
+    .confetti-piece {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      z-index: 9999;
+      pointer-events: none;
+      animation: fall 2.4s linear forwards;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- HEADER -->
+  <header class="top-header">
+    <div class="brand-left">
+      <div class="owl-logo" title="Gyanu AI By Rishi Sir">
+        <img src="channels4_profile (1).jpg" alt="Gyanu AI" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22><rect width=%22120%22 height=%22120%22 rx=%2260%22 fill=%22%23312e81%22/><text x=%2260%22 y=%2260%22 font-family=%22Arial%22 font-weight=%22bold%22 font-size=%2217%22 fill=%22%235eead4%22 text-anchor=%22middle%22>Gyanu AI</text><text x=%2260%22 y=%2280%22 font-family=%22Arial%22 font-weight=%22bold%22 font-size=%2211%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>By Rishi Sir</text></svg>';" />
+      </div>
+      <div class="brand-titles">
+        <h1>CBSE Class 9 Science — Smart 3D Flashcards</h1>
+        <p>GYANU AI By Rishi Sir • All 13 Chapters (668 Interactive Cards)</p>
+        <div class="greeting-pill" onclick="openNameModal()" title="Click to change your name">
+          <span>👋</span>
+          <span id="studentGreeting">Welcome, Champion! (Tap to set name)</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="action-btn switch-quiz-btn" onclick="openQuizPortal()">🎯 Open Class 9 Quiz ➔</button>
+      <button class="action-btn" id="soundBtn" onclick="toggleSound()">🔊 Sound ON</button>
+      <button class="action-btn" id="themeBtn" onclick="toggleDarkMode()">🌙 Night</button>
+    </div>
+  </header>
+
+  <!-- GAMIFICATION HUD -->
+  <section class="hud-bar">
+    <div class="hud-top">
+      <div class="hud-stats">
+        <span class="stat-chip xp">⚡ XP: <strong id="xpVal">0</strong></span>
+        <span class="stat-chip streak">🔥 Streak: <strong id="streakVal">0</strong></span>
+        <span class="stat-chip mastered">🟢 Mastered (This Ch): <strong id="masteredVal">0 / 50</strong></span>
+      </div>
+      <button class="tool-btn" onclick="shareProgressWhatsApp()" style="background:#25D366;color:#fff;border:none;">📲 Share Progress</button>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="masteryBar"></div>
+    </div>
+  </section>
+
+  <!-- CONTROLS PANEL -->
+  <section class="nav-panel">
+    <!-- Branch Filters -->
+    <div class="branch-tabs">
+      <button class="pill-tab active" onclick="filterBranch('all', this)">📚 All 13 Chapters (668)</button>
+      <button class="pill-tab" onclick="filterBranch('bio', this)">🧬 Biology (Ch 2,3,11,12)</button>
+      <button class="pill-tab" onclick="filterBranch('phy', this)">⚡ Physics (Ch 4,6,7,10)</button>
+      <button class="pill-tab" onclick="filterBranch('chem', this)">🧪 Chemistry (Ch 5,8,9)</button>
+      <button class="pill-tab" onclick="filterBranch('inquiry', this)">🌍 Inquiry & Earth (Ch 1,13)</button>
+    </div>
+
+    <!-- Chapter Selector & Search -->
+    <div class="select-search-row">
+      <select id="chapterSelect" class="chapter-select" onchange="onChapterChange()"></select>
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search keyword, formula, scientist..." oninput="applyFilters()" />
+    </div>
+
+    <!-- High-Yield Tag Filters -->
+    <div class="tag-filters">
+      <button class="pill-tab tag-tab active" onclick="filterTag('all', this)">✨ All Cards</button>
+      <button class="pill-tab tag-tab" onclick="filterTag('formula', this)">📐 Formulas & SI Units</button>
+      <button class="pill-tab tag-tab" onclick="filterTag('fib', this)">✍️ Fill in the Blanks</button>
+      <button class="pill-tab tag-tab" onclick="filterTag('concept', this)">⭐ Concepts & Definitions</button>
+      <button class="pill-tab tag-tab" onclick="filterTag('hard', this)">🔴 Hard Review Deck (<span id="hardCount">0</span>)</button>
+    </div>
+
+    <!-- Deck Toolbar with SHUFFLE -->
+    <div class="deck-toolbar">
+      <div class="deck-info" id="deckCounter">Card 1 of 50 • Tap card to flip (or swipe)</div>
+      <div class="tool-btns">
+        <button class="tool-btn shuffle-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle Cards</button>
+        <button class="tool-btn" onclick="resetDeckOrder()">↺ Reset Order</button>
+        <button class="tool-btn" onclick="resetChapterProgress()">🗑️ Clear Progress</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D FLASHCARD STAGE -->
+  <section class="stage-wrapper" id="cardStage">
+    <div class="flashcard-3d" id="flashcardEl" onclick="flipCard()">
+      <!-- FRONT -->
+      <div class="card-face card-front">
+        <div class="face-top">
+          <div class="face-badges">
+            <span class="c-badge num" id="cardNumBadge">Card #1</span>
+            <span class="c-badge type" id="cardTypeBadge">⭐ Concept</span>
+          </div>
+          <div class="face-actions" onclick="event.stopPropagation()">
+            <button class="mini-icon-btn" onclick="showClue()">💡 Clue</button>
+            <button class="mini-icon-btn" onclick="speakCurrent('q')">🔊 Listen</button>
+          </div>
+        </div>
+
+        <div class="face-center">
+          <div class="question-text" id="cardQuestion">Loading flashcard...</div>
+          <div class="clue-box" id="clueBox"></div>
+        </div>
+
+        <div class="face-bottom">👆 Tap card or press <strong>Space</strong> to reveal answer • Swipe ◀ ▶ to navigate</div>
+      </div>
+
+      <!-- BACK -->
+      <div class="card-face card-back">
+        <div class="face-top">
+          <div class="face-badges">
+            <span class="c-badge ans-label">✅ Answer</span>
+            <span class="c-badge type" id="cardBackChBadge">Chapter 1</span>
+          </div>
+          <div class="face-actions" onclick="event.stopPropagation()">
+            <button class="mini-icon-btn" onclick="speakCurrent('a')">🔊 Listen Answer</button>
+          </div>
+        </div>
+
+        <div class="face-center">
+          <div class="answer-text" id="cardAnswer">Answer appears here</div>
+        </div>
+
+        <div class="face-bottom">Rate your confidence below to earn XP & trigger spaced repetition! 👇</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-BUTTON SPACED REPETITION RATING -->
+  <section class="rating-row">
+    <button class="rate-btn hard" onclick="rateCard('hard')">
+      <span>🔴 Hard</span>
+      <span class="sub">Repeat in 4 cards</span>
+    </button>
+    <button class="rate-btn good" onclick="rateCard('good')">
+      <span>🟡 Good</span>
+      <span class="sub">+5 XP • Reviewed</span>
+    </button>
+    <button class="rate-btn easy" onclick="rateCard('mastered')">
+      <span>🟢 Mastered!</span>
+      <span class="sub">+10 XP • Streak 🔥</span>
+    </button>
+  </section>
+
+  <!-- PREV / FLIP / NEXT -->
+  <section class="nav-controls">
+    <button class="nav-btn" onclick="prevCard()">⬅️ Previous</button>
+    <button class="nav-btn primary-nav" onclick="flipCard()">🔄 Flip Card</button>
+    <button class="nav-btn" onclick="nextCard()">Next ➡️</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-card">
+    <div>
+      <h3 style="font-size:1.05rem;font-weight:800;">🦉 GYANU AI By Rishi Sir — CBSE Class 9 Science Studio</h3>
+      <p style="font-size:0.82rem;opacity:0.92;">Designed by Rishi Sir • Active Recall + Spaced Repetition + Smart Shuffle</p>
+    </div>
+    <a href="https://wa.me/919251477188?text=Hello%20Rishi%20Sir%2C%20I%20am%20revising%20CBSE%20Class%209%20Science%20Flashcards%20on%20Gyanu%20AI!" target="_blank" rel="noopener noreferrer" class="wa-btn">
+      📲 Rishi Sir WhatsApp: 9251477188
+    </a>
+  </footer>
+</div>
+
+<!-- STUDENT NAME MODAL -->
+<div class="modal-backdrop" id="nameModal">
+  <div class="modal-box">
+    <h3>🦉 Welcome to Gyanu AI!</h3>
+    <p>Enter your first name to personalize your Class 9 Science study tracker:</p>
+    <input type="text" id="studentNameInput" class="modal-input" placeholder="e.g., Aarav, Ananya..." maxlength="25" />
+    <div style="display:flex;gap:8px;">
+      <button class="nav-btn" onclick="closeNameModal()" style="padding:10px;">Skip</button>
+      <button class="nav-btn primary-nav" onclick="saveStudentName()" style="padding:10px;">Save Name ✨</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toastEl">Shuffled!</div>
+
+<script>
+  // 🔗 Update this URL once CBSE Class 9 Quiz Arena is published on Vercel!
+  const QUIZ_PORTAL_URL = "#";
+
+  const chapterMeta = {"1": {"title": "Chapter 1: Exploration: Entering the World of Secondary Science", "branch": "inquiry", "branchName": "🔬 Scientific Inquiry", "count": 50}, "2": {"title": "Chapter 2: Cell: The Building Block of Life", "branch": "bio", "branchName": "🧬 Biology", "count": 50}, "3": {"title": "Chapter 3: Tissues in Action", "branch": "bio", "branchName": "🧬 Biology", "count": 50}, "4": {"title": "Chapter 4: Describing Motion Around Us", "branch": "phy", "branchName": "⚡ Physics", "count": 45}, "5": {"title": "Chapter 5: Exploring Mixtures and their Separation", "branch": "chem", "branchName": "🧪 Chemistry", "count": 60}, "6": {"title": "Chapter 6: How Forces Affect Motion", "branch": "phy", "branchName": "⚡ Physics", "count": 40}, "7": {"title": "Chapter 7: Work, Energy, and Simple Machines", "branch": "phy", "branchName": "⚡ Physics", "count": 48}, "8": {"title": "Chapter 8: Journey Inside the Atom", "branch": "chem", "branchName": "🧪 Chemistry", "count": 45}, "9": {"title": "Chapter 9: Atomic Foundations of Matter", "branch": "chem", "branchName": "🧪 Chemistry", "count": 80}, "10": {"title": "Chapter 10: Sound Waves: Characteristics and Applications", "branch": "phy", "branchName": "⚡ Physics", "count": 50}, "11": {"title": "Chapter 11: Reproduction: How Life Continues", "branch": "bio", "branchName": "🧬 Biology", "count": 50}, "12": {"title": "Chapter 12: Patterns in Life: Diversity and Classification", "branch": "bio", "branchName": "🧬 Biology", "count": 50}, "13": {"title": "Chapter 13: Earth as a System: Energy, Matter, and Life", "branch": "inquiry", "branchName": "🌍 Earth & Science", "count": 50}};
+  const flashcardsDB = {"1": [{"id": "c1_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c1_2", "num": 2, "q": "What is the primary purpose of using 'models' in science?", "a": "To simplify complex systems to focus on specific questions.", "tag": "concept"}, {"id": "c1_3", "num": 3, "q": "How is a moving car typically represented in a physics model?", "a": "As a single point.", "tag": "concept"}, {"id": "c1_4", "num": 4, "q": "In chemistry models, what are atoms and molecules usually represented as?", "a": "Spheres and bonds.", "tag": "concept"}, {"id": "c1_5", "num": 5, "q": "How does biology simplify cells in a model?", "a": "Using diagrams that highlight only key parts.", "tag": "concept"}, {"id": "c1_6", "num": 6, "q": "How does earth science represent the Earth as a simplified model?", "a": "As a smooth sphere layered into distinct regions.", "tag": "concept"}, {"id": "c1_7", "num": 7, "q": "Which specific detail is often ignored when modeling falling objects?", "a": "Air resistance.", "tag": "concept"}, {"id": "c1_8", "num": 8, "q": "Scientist Meghnad Saha simplified the study of stars by treating matter as a _____.", "a": "Hot gas", "tag": "fib"}, {"id": "c1_9", "num": 9, "q": "Which two factors did Meghnad Saha focus on to explain star colors?", "a": "Temperature and pressure.", "tag": "concept"}, {"id": "c1_10", "num": 10, "q": "Scientific meanings must be communicated clearly and _____.", "a": "Unambiguously", "tag": "fib"}, {"id": "c1_11", "num": 11, "q": "What is the standard scientific symbol for mass?", "a": "$m$", "tag": "formula"}, {"id": "c1_12", "num": 12, "q": "What is the standard scientific symbol for velocity?", "a": "$v$", "tag": "formula"}, {"id": "c1_13", "num": 13, "q": "What is the standard scientific symbol for force?", "a": "$F$", "tag": "formula"}, {"id": "c1_14", "num": 14, "q": "What is the standard scientific symbol for electric current?", "a": "$I$", "tag": "formula"}, {"id": "c1_15", "num": 15, "q": "In science, what is the role of mathematics?", "a": "A language to express relationships precisely.", "tag": "concept"}, {"id": "c1_16", "num": 16, "q": "The symbol '$c$' for the speed of light comes from which Latin word?", "a": "Celeritas", "tag": "formula"}, {"id": "c1_17", "num": 17, "q": "What is the exact speed of light defined as in the text?", "a": "$299,792,458 \\text{ m/s}$", "tag": "formula"}, {"id": "c1_18", "num": 18, "q": "Which unit system is used to avoid errors and ensure global fairness?", "a": "Standard units (SI units).", "tag": "concept"}, {"id": "c1_19", "num": 19, "q": "What term describes a regular pattern observed in nature?", "a": "Law", "tag": "concept"}, {"id": "c1_20", "num": 20, "q": "Provide one example of a scientific law mentioned in the text.", "a": "Newton's laws of motion.", "tag": "concept"}, {"id": "c1_21", "num": 21, "q": "What term refers to an explanation of why patterns occur in nature?", "a": "Theory", "tag": "concept"}, {"id": "c1_22", "num": 22, "q": "Scientific theories are based on _____ gathered over time.", "a": "Evidence", "tag": "fib"}, {"id": "c1_23", "num": 23, "q": "What are the broad ideas used to make sense of a situation called?", "a": "Principles", "tag": "concept"}, {"id": "c1_24", "num": 24, "q": "The principle of _____ helps make sense of climbing stairs.", "a": "Conservation of energy", "tag": "fib"}, {"id": "c1_25", "num": 25, "q": "Scientific predictions are reasoned expectations based on evidence and _____.", "a": "Careful thinking", "tag": "fib"}, {"id": "c1_26", "num": 26, "q": "What happens when scientific predictions do not match observations?", "a": "Scientists re-examine assumptions, models, or measurements.", "tag": "concept"}, {"id": "c1_27", "num": 27, "q": "A scientific question must look for measurable evidence and _____.", "a": "Past patterns", "tag": "fib"}, {"id": "c1_28", "num": 28, "q": "Why are weather forecasts less certain the further into the future they look?", "a": "Tiny differences in conditions grow and lead to changes.", "tag": "concept"}, {"id": "c1_29", "num": 29, "q": "What is the key strength of science regarding its theories and limits?", "a": "Openness to being corrected by nature.", "tag": "concept"}, {"id": "c1_30", "num": 30, "q": "Developing a habit of _____ helps build intuition and detect errors.", "a": "Estimation", "tag": "fib"}, {"id": "c1_31", "num": 31, "q": "What is the estimated volume of air in one typical human breath?", "a": "About $0.5 \\text{ L}$.", "tag": "formula"}, {"id": "c1_32", "num": 32, "q": "Approximately how many breaths does a resting human take in one day?", "a": "About $20,000$.", "tag": "formula"}, {"id": "c1_33", "num": 33, "q": "Estimate the total liters of air an adult breathes in one day.", "a": "About $10,000 \\text{ L}$.", "tag": "formula"}, {"id": "c1_34", "num": 34, "q": "Understanding how a mask works requires knowledge of _____ fibers from Chemistry.", "a": "Polymer", "tag": "fib"}, {"id": "c1_35", "num": 35, "q": "Which branch of science explains the size and behavior of viruses?", "a": "Biology", "tag": "concept"}, {"id": "c1_36", "num": 36, "q": "In mask functionality, Physics deals with particle motion and _____.", "a": "Electrostatic attraction", "tag": "fib"}, {"id": "c1_37", "num": 37, "q": "Science is described as a human activity shaped by _____.", "a": "Curiosity, creativity, collaboration, and careful questioning.", "tag": "fib"}, {"id": "c1_38", "num": 38, "q": "The journey of discovery is guided by the compass of _____.", "a": "Curiosity", "tag": "fib"}, {"id": "c1_39", "num": 39, "q": "The journey of discovery uses the magnifying glass of _____.", "a": "Evidence", "tag": "fib"}, {"id": "c1_40", "num": 40, "q": "Why is ignoring some details actually useful in scientific modeling?", "a": "To keep problems simple enough to find answers.", "tag": "concept"}, {"id": "c1_41", "num": 41, "q": "Is a scientific theory a permanent, final truth?", "a": "No, it is always open to improvement.", "tag": "concept"}, {"id": "c1_42", "num": 42, "q": "What allows scientists to anticipate what will happen under new conditions?", "a": "Laws, theories, and models.", "tag": "concept"}, {"id": "c1_43", "num": 43, "q": "Which branch of science models mask airflow and filtration efficiency?", "a": "Mathematics", "tag": "concept"}, {"id": "c1_44", "num": 44, "q": "What determines if food is harmful to eat during an eclipse?", "a": "Physical, chemical, or biological mechanisms.", "tag": "concept"}, {"id": "c1_45", "num": 45, "q": "A rough estimate for the daily calorie needs of an adult is _____.", "a": "$2000 - 2500 \\text{ kcal}$", "tag": "fib"}, {"id": "c1_46", "num": 46, "q": "Why did the passenger aircraft in the text run out of fuel mid-flight?", "a": "A mix-up between units (pounds vs kilograms).", "tag": "concept"}, {"id": "c1_47", "num": 47, "q": "How does the text define a 'Principle'?", "a": "A broad idea that helps make sense of a situation.", "tag": "concept"}, {"id": "c1_48", "num": 48, "q": "Atomic theory provides an explanation for why _____ are formed.", "a": "Molecules", "tag": "fib"}, {"id": "c1_49", "num": 49, "q": "What is the purpose of Example 1.3 regarding air estimation?", "a": "To find a reasonable estimate, not an exact answer.", "tag": "concept"}, {"id": "c1_50", "num": 50, "q": "Science connects with mathematics, technology, arts, and _____.", "a": "Social sciences", "tag": "fib"}], "2": [{"id": "c2_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c2_2", "num": 2, "q": "What is considered the basic structural and functional unit of life?", "a": "The cell.", "tag": "concept"}, {"id": "c2_3", "num": 3, "q": "What term describes organisms, like bacteria or yeast, consisting of only one cell?", "a": "Unicellular organisms.", "tag": "concept"}, {"id": "c2_4", "num": 4, "q": "What are heat-loving bacteria found in extreme environments like hot springs called?", "a": "Thermophiles.", "tag": "concept"}, {"id": "c2_5", "num": 5, "q": "Who was the first person to observe and name 'cells' in 1665?", "a": "Robert Hooke.", "tag": "concept"}, {"id": "c2_6", "num": 6, "q": "The limit of resolution of the human eye is approximately _____.", "a": "$0.1 \\text{ mm}$.", "tag": "fib"}, {"id": "c2_7", "num": 7, "q": "Which tool uses a beam of electrons to produce highly magnified images of cell structures?", "a": "Electron microscope.", "tag": "concept"}, {"id": "c2_8", "num": 8, "q": "Unit conversion: $1 \\text{ millimetre (mm)}$ = _____.", "a": "$1000 \\text{ micrometre (}\\mu\\text{m)}$.", "tag": "fib"}, {"id": "c2_9", "num": 9, "q": "Formula: Estimated size of a cell = _____.", "a": "Diameter of visible field / Number of cells along diameter.", "tag": "fib"}, {"id": "c2_10", "num": 10, "q": "What is the selectively permeable outer boundary of a cell called?", "a": "Cell membrane (or plasma membrane).", "tag": "concept"}, {"id": "c2_11", "num": 11, "q": "Which model explains the cell membrane as a lipid bilayer with embedded proteins?", "a": "Fluid-mosaic model.", "tag": "concept"}, {"id": "c2_12", "num": 12, "q": "The process of water moving through a selectively permeable membrane is called _____.", "a": "Osmosis.", "tag": "fib"}, {"id": "c2_13", "num": 13, "q": "In which type of solution does a cell swell because water enters it?", "a": "Hypotonic solution.", "tag": "concept"}, {"id": "c2_14", "num": 14, "q": "In which type of solution does a cell shrink because water leaves it?", "a": "Hypertonic solution.", "tag": "concept"}, {"id": "c2_15", "num": 15, "q": "What happens to a cell's size when placed in an isotonic solution?", "a": "The size remains the same.", "tag": "concept"}, {"id": "c2_16", "num": 16, "q": "What rigid outer layer provides structural support and protection to plant cells?", "a": "Cell wall.", "tag": "concept"}, {"id": "c2_17", "num": 17, "q": "What is the primary carbohydrate that makes up the plant cell wall?", "a": "Cellulose.", "tag": "concept"}, {"id": "c2_18", "num": 18, "q": "What is the term for the shrinkage of plant cell contents away from the cell wall in hypertonic solutions?", "a": "Plasmolysis.", "tag": "concept"}, {"id": "c2_19", "num": 19, "q": "Which organelle is known as the 'house of coded instructions'?", "a": "The nucleus.", "tag": "concept"}, {"id": "c2_20", "num": 20, "q": "What double-layered covering surrounds the nucleus?", "a": "Nuclear membrane.", "tag": "concept"}, {"id": "c2_21", "num": 21, "q": "Chromosomes are composed of which two primary materials?", "a": "DNA and proteins.", "tag": "concept"}, {"id": "c2_22", "num": 22, "q": "What are the functional segments of DNA called?", "a": "Genes.", "tag": "concept"}, {"id": "c2_23", "num": 23, "q": "In a non-dividing cell, DNA is present as an entangled mass of thread-like structures called _____.", "a": "Chromatin.", "tag": "fib"}, {"id": "c2_24", "num": 24, "q": "Which type of cells lack a well-defined nucleus and membrane-bound organelles?", "a": "Prokaryotic cells.", "tag": "concept"}, {"id": "c2_25", "num": 25, "q": "In prokaryotic cells, the undefined nuclear region containing genetic material is called the _____.", "a": "Nucleoid.", "tag": "fib"}, {"id": "c2_26", "num": 26, "q": "Which organelle serves as the site for protein synthesis?", "a": "Ribosomes.", "tag": "concept"}, {"id": "c2_27", "num": 27, "q": "Which organelle is known as the 'manufacturing factory' of the cell?", "a": "Endoplasmic Reticulum (ER).", "tag": "concept"}, {"id": "c2_28", "num": 28, "q": "Which type of ER is involved in the synthesis of lipids and fats?", "a": "Smooth Endoplasmic Reticulum (SER).", "tag": "concept"}, {"id": "c2_29", "num": 29, "q": "Which organelle functions as the packaging and shipping centre of the cell?", "a": "Golgi apparatus.", "tag": "concept"}, {"id": "c2_30", "num": 30, "q": "Which organelle contains digestive enzymes to break down waste and damaged materials?", "a": "Lysosomes.", "tag": "concept"}, {"id": "c2_31", "num": 31, "q": "Why are lysosomes sometimes called 'suicide bags'?", "a": "They can digest their own cell if it is damaged.", "tag": "concept"}, {"id": "c2_32", "num": 32, "q": "Which organelle is known as the 'powerhouse of the cell'?", "a": "Mitochondria.", "tag": "concept"}, {"id": "c2_33", "num": 33, "q": "Mitochondria release energy in the form of which molecule?", "a": "Adenosine Triphosphate (ATP).", "tag": "concept"}, {"id": "c2_34", "num": 34, "q": "What are the finger-like projections of the inner mitochondrial membrane called?", "a": "Cristae.", "tag": "concept"}, {"id": "c2_35", "num": 35, "q": "Which plant-specific organelles are involved in food synthesis and storage?", "a": "Plastids.", "tag": "concept"}, {"id": "c2_36", "num": 36, "q": "Which plastids contain the green pigment chlorophyll for photosynthesis?", "a": "Chloroplasts.", "tag": "concept"}, {"id": "c2_37", "num": 37, "q": "Which colorless plastids are used for storing starch, oils, or proteins?", "a": "Leucoplasts.", "tag": "concept"}, {"id": "c2_38", "num": 38, "q": "The fluid-filled space inside a chloroplast is called the _____.", "a": "Stroma.", "tag": "fib"}, {"id": "c2_39", "num": 39, "q": "What is the watery fluid found inside a plant's large central vacuole called?", "a": "Cell sap.", "tag": "concept"}, {"id": "c2_40", "num": 40, "q": "What is the process by which a single parent cell produces two genetically identical daughter cells?", "a": "Mitosis.", "tag": "concept"}, {"id": "c2_41", "num": 41, "q": "Which type of cell division is essential for sexual reproduction and genetic diversity?", "a": "Meiosis.", "tag": "concept"}, {"id": "c2_42", "num": 42, "q": "How many daughter cells are produced at the end of meiosis?", "a": "Four.", "tag": "concept"}, {"id": "c2_43", "num": 43, "q": "Who expanded the cell theory by stating 'all cells arise from pre-existing cells'?", "a": "Rudolf Virchow.", "tag": "concept"}, {"id": "c2_44", "num": 44, "q": "What is the genetically regulated process of selective cell destruction called?", "a": "Programmed Cell Death (PCD).", "tag": "concept"}, {"id": "c2_45", "num": 45, "q": "Uncontrolled cell division can lead to the formation of _____.", "a": "Tumours (or cancer).", "tag": "fib"}, {"id": "c2_46", "num": 46, "q": "Which organelle in liver cells plays a crucial role in detoxifying poisons?", "a": "Smooth Endoplasmic Reticulum (SER).", "tag": "concept"}, {"id": "c2_47", "num": 47, "q": "Mature human Red Blood Cells (RBCs) lack which major organelle?", "a": "The nucleus.", "tag": "concept"}, {"id": "c2_48", "num": 48, "q": "The typical diameter of a eukaryotic cell ranges from _____.", "a": "$10 \\text{ to } 100 \\text{ } \\mu\\text{m}$.", "tag": "fib"}, {"id": "c2_49", "num": 49, "q": "The typical diameter of a prokaryotic cell ranges from _____.", "a": "$1 \\text{ to } 10 \\text{ } \\mu\\text{m}$.", "tag": "fib"}, {"id": "c2_50", "num": 50, "q": "Which scientist discovered the Golgi apparatus in 1898?", "a": "Camillo Golgi.", "tag": "concept"}], "3": [{"id": "c3_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c3_2", "num": 2, "q": "In science, what is a simplified way of looking at real systems to focus on specific questions?", "a": "A scientific model.", "tag": "concept"}, {"id": "c3_3", "num": 3, "q": "Why do scientists deliberately ignore certain details when building a model?", "a": "To keep things simple enough to find answers.", "tag": "concept"}, {"id": "c3_4", "num": 4, "q": "What Latin word, meaning 'speed', is the origin for the symbol $c$?", "a": "Celeritas.", "tag": "formula"}, {"id": "c3_5", "num": 5, "q": "The speed of light is a physical constant defined as exactly _____.", "a": "$299,792,458 \\text{ m/s}$.", "tag": "fib"}, {"id": "c3_6", "num": 6, "q": "What is the primary benefit of using standard international (SI) units globally?", "a": "Ensures fairness and avoids conversion errors.", "tag": "concept"}, {"id": "c3_7", "num": 7, "q": "A _____ usually describes a regular pattern observed in nature, often expressed mathematically.", "a": "Scientific Law.", "tag": "fib"}, {"id": "c3_8", "num": 8, "q": "How does a scientific theory differ from a simple guess?", "a": "It is an explanation based on testing and evidence.", "tag": "concept"}, {"id": "c3_9", "num": 9, "q": "Broad ideas that help scientists make sense of a given situation are called _____.", "a": "Principles.", "tag": "fib"}, {"id": "c3_10", "num": 10, "q": "What is the core purpose of making a rough estimate in scientific reasoning?", "a": "To check if a result is reasonable or impossible.", "tag": "concept"}, {"id": "c3_11", "num": 11, "q": "In the study of cells, what is the term for the human eye's ability to see two close objects as separate?", "a": "Limit of resolution.", "tag": "concept"}, {"id": "c3_12", "num": 12, "q": "The limit of resolution for the unaided human eye is approximately _____.", "a": "$0.1 \\text{ mm}$.", "tag": "fib"}, {"id": "c3_13", "num": 13, "q": "Concept: Magnification", "a": "Definition: Making an object appear larger using lenses.", "tag": "concept"}, {"id": "c3_14", "num": 14, "q": "Who first observed and named 'cells' in 1665 using a thin slice of cork?", "a": "Robert Hooke.", "tag": "concept"}, {"id": "c3_15", "num": 15, "q": "One millimeter ($1 \\text{ mm}$) is equivalent to how many micrometres ($\\mu m$)?", "a": "$1000 \\mu m$.", "tag": "formula"}, {"id": "c3_16", "num": 16, "q": "Formula: Estimated size of a cell", "a": "Diameter of visible field divided by number of cells.", "tag": "formula"}, {"id": "c3_17", "num": 17, "q": "What instrument is required to see cell structures at the nanometre scale?", "a": "Electron microscope.", "tag": "concept"}, {"id": "c3_18", "num": 18, "q": "The selectively permeable thin boundary surrounding a cell is called the _____.", "a": "Plasma membrane.", "tag": "fib"}, {"id": "c3_19", "num": 19, "q": "The net movement of particles from an area of higher concentration to lower concentration is _____.", "a": "Diffusion.", "tag": "fib"}, {"id": "c3_20", "num": 20, "q": "What specific type of diffusion involves water moving across a selectively permeable membrane?", "a": "Osmosis.", "tag": "concept"}, {"id": "c3_21", "num": 21, "q": "What happens to a cell when it is placed in a hypertonic solution?", "a": "It shrinks.", "tag": "concept"}, {"id": "c3_22", "num": 22, "q": "A solution where the solute concentration equals that inside the cell is called _____.", "a": "Isotonic.", "tag": "fib"}, {"id": "c3_23", "num": 23, "q": "According to the fluid-mosaic model, the cell membrane is composed of a _____.", "a": "Lipid bilayer with embedded proteins.", "tag": "fib"}, {"id": "c3_24", "num": 24, "q": "What rigid outer layer provides structural support specifically to plant cells?", "a": "Cell wall.", "tag": "concept"}, {"id": "c3_25", "num": 25, "q": "The plant cell wall is primarily made of a carbohydrate called _____.", "a": "Cellulose.", "tag": "fib"}, {"id": "c3_26", "num": 26, "q": "What term describes a plant cell shrinking away from its cell wall in a concentrated solution?", "a": "Plasmolysis.", "tag": "concept"}, {"id": "c3_27", "num": 27, "q": "Cells that lack a well-defined nucleus and membrane-bound organelles are called _____.", "a": "Prokaryotic cells.", "tag": "fib"}, {"id": "c3_28", "num": 28, "q": "In a prokaryotic cell, the region containing genetic material is called the _____.", "a": "Nucleoid.", "tag": "fib"}, {"id": "c3_29", "num": 29, "q": "The double-layered covering of the nucleus is known as the _____.", "a": "Nuclear membrane.", "tag": "fib"}, {"id": "c3_30", "num": 30, "q": "Which organelle is considered the 'house of coded instructions' or the control center?", "a": "Nucleus.", "tag": "concept"}, {"id": "c3_31", "num": 31, "q": "What structures, visible during cell division, contain DNA and genetic information?", "a": "Chromosomes.", "tag": "concept"}, {"id": "c3_32", "num": 32, "q": "Which tiny cell structures are known as 'protein factories'?", "a": "Ribosomes.", "tag": "concept"}, {"id": "c3_33", "num": 33, "q": "What are the two types of Endoplasmic Reticulum (ER)?", "a": "Rough ER and Smooth ER.", "tag": "concept"}, {"id": "c3_34", "num": 34, "q": "The _____ apparatus is responsible for modifying, packaging, and shipping cell products.", "a": "Golgi.", "tag": "fib"}, {"id": "c3_35", "num": 35, "q": "Which organelle contains digestive enzymes to break down waste and is called the 'clean-up system'?", "a": "Lysosome.", "tag": "concept"}, {"id": "c3_36", "num": 36, "q": "Why is the mitochondrion often called the 'powerhouse of the cell'?", "a": "It produces energy in the form of $ATP$.", "tag": "concept"}, {"id": "c3_37", "num": 37, "q": "The energy currency used for most cellular activities is _____.", "a": "Adenosine Triphosphate ($ATP$).", "tag": "fib"}, {"id": "c3_38", "num": 38, "q": "What green pigment in chloroplasts is essential for photosynthesis?", "a": "Chlorophyll.", "tag": "concept"}, {"id": "c3_39", "num": 39, "q": "Which type of plastid is responsible for storing food materials like starch and oils?", "a": "Leucoplasts.", "tag": "concept"}, {"id": "c3_40", "num": 40, "q": "In mature plant cells, what large organelle provides turgidity and stores cell sap?", "a": "Central vacuole.", "tag": "concept"}, {"id": "c3_41", "num": 41, "q": "The process by which a single cell divides into two genetically identical daughter cells is _____.", "a": "Mitosis.", "tag": "fib"}, {"id": "c3_42", "num": 42, "q": "Which type of cell division is essential for sexual reproduction and genetic diversity?", "a": "Meiosis.", "tag": "concept"}, {"id": "c3_43", "num": 43, "q": "The first postulate of Cell Theory states that all living organisms are made of _____.", "a": "One or more cells.", "tag": "fib"}, {"id": "c3_44", "num": 44, "q": "According to Cell Theory, all cells arise from _____.", "a": "Pre-existing cells.", "tag": "fib"}, {"id": "c3_45", "num": 45, "q": "What is the term for the genetically regulated process of selective cell destruction?", "a": "Programmed Cell Death (PCD).", "tag": "concept"}, {"id": "c3_46", "num": 46, "q": "What condition results when cells lose contact inhibition and divide uncontrollably?", "a": "Formation of tumors (Cancer).", "tag": "concept"}, {"id": "c3_47", "num": 47, "q": "Heat-loving bacteria found in extreme environments like hot springs are called _____.", "a": "Thermophiles.", "tag": "fib"}, {"id": "c3_48", "num": 48, "q": "What is the purpose of cristae in the inner membrane of mitochondria?", "a": "Increase surface area for chemical reactions.", "tag": "concept"}, {"id": "c3_49", "num": 49, "q": "The semi-fluid substance inside a chloroplast is called the _____.", "a": "Stroma.", "tag": "fib"}, {"id": "c3_50", "num": 50, "q": "Which German botanist and zoologist duo helped formulate the classical Cell Theory?", "a": "Matthias Schleiden and Theodor Schwann.", "tag": "formula"}], "4": [{"id": "c4_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c4_2", "num": 2, "q": "What describes the position of an object at any instant of time?", "a": "Distance and direction with respect to a reference point.", "tag": "concept"}, {"id": "c4_3", "num": 3, "q": "When is an object said to be in motion?", "a": "When its position changes with time relative to a reference.", "tag": "concept"}, {"id": "c4_4", "num": 4, "q": "What is the net change in an object's position between two instants?", "a": "Displacement.", "tag": "concept"}, {"id": "c4_5", "num": 5, "q": "Define average speed mathematically.", "a": "Total distance travelled divided by the time interval.", "tag": "concept"}, {"id": "c4_6", "num": 6, "q": "What is the formula for average velocity?", "a": "Displacement divided by the time interval.", "tag": "formula"}, {"id": "c4_7", "num": 7, "q": "How is average acceleration defined?", "a": "Change in velocity divided by the time interval.", "tag": "concept"}, {"id": "c4_8", "num": 8, "q": "Under what specific condition are kinematic equations valid?", "a": "When the acceleration is constant.", "tag": "formula"}, {"id": "c4_9", "num": 9, "q": "State the kinematic equation relating $v$, $u$, $a$, and $t$.", "a": "$v = u + at$", "tag": "formula"}, {"id": "c4_10", "num": 10, "q": "State the kinematic equation relating $s$, $u$, $t$, and $a$.", "a": "$s = ut + \\frac{1}{2}at^2$", "tag": "formula"}, {"id": "c4_11", "num": 11, "q": "State the kinematic equation relating $v$, $u$, $a$, and $s$.", "a": "$v^2 = u^2 + 2as$", "tag": "formula"}, {"id": "c4_12", "num": 12, "q": "What do the symbols $u$ and $v$ represent in motion equations?", "a": "Initial velocity and final velocity, respectively.", "tag": "formula"}, {"id": "c4_13", "num": 13, "q": "What does the symbol $s$ represent in kinematic equations?", "a": "Displacement.", "tag": "formula"}, {"id": "c4_14", "num": 14, "q": "What is the SI unit for velocity?", "a": "$m s^{-1}$", "tag": "formula"}, {"id": "c4_15", "num": 15, "q": "What is the SI unit for acceleration?", "a": "$m s^{-2}$", "tag": "formula"}, {"id": "c4_16", "num": 16, "q": "Define uniform circular motion.", "a": "Motion in a circular path with constant speed.", "tag": "concept"}, {"id": "c4_17", "num": 17, "q": "If a car travels $250\\text{ m}$ to a shop and returns home, what is its displacement?", "a": "$0\\text{ m}$", "tag": "formula"}, {"id": "c4_18", "num": 18, "q": "A car travels $250\\text{ m}$ to a shop and returns home. What is the total distance?", "a": "$500\\text{ m}$", "tag": "formula"}, {"id": "c4_19", "num": 19, "q": "Why might a scooter be accelerating even if its speedometer reading is constant?", "a": "Because it is changing its direction of motion.", "tag": "concept"}, {"id": "c4_20", "num": 20, "q": "If a car starts from rest, what is its initial velocity ($u$)?", "a": "$0\\text{ m s}^{-1}$", "tag": "formula"}, {"id": "c4_21", "num": 21, "q": "A car reaches $24\\text{ m s}^{-1}$ in $6\\text{ s}$ from rest. Calculate average acceleration.", "a": "$4\\text{ m s}^{-2}$", "tag": "formula"}, {"id": "c4_22", "num": 22, "q": "In motion along a straight line in one direction, what is the relation between speed and velocity?", "a": "Speed is equal to the magnitude of velocity.", "tag": "concept"}, {"id": "c4_23", "num": 23, "q": "What do the signs of $u, v, a,$ and $s$ indicate in straight-line motion?", "a": "The direction of the particular quantity.", "tag": "concept"}, {"id": "c4_24", "num": 24, "q": "What are three idealized forms of motion used by scientists to simplify study?", "a": "Linear, circular, and oscillatory motion.", "tag": "concept"}, {"id": "c4_25", "num": 25, "q": "In Activity 1.1, why is ignoring some details useful when modeling a bicycle ride?", "a": "It simplifies complex phenomena to focus on key variables.", "tag": "concept"}, {"id": "c4_26", "num": 26, "q": "What happens to the direction of velocity in uniform circular motion?", "a": "It changes continuously at every point.", "tag": "concept"}, {"id": "c4_27", "num": 27, "q": "Which physical quantity represents the strength of a force?", "a": "Magnitude.", "tag": "concept"}, {"id": "c4_28", "num": 28, "q": "What is the SI unit of force?", "a": "newton ($N$)", "tag": "formula"}, {"id": "c4_29", "num": 29, "q": "How does collision avoidance distance relate to vehicle speed?", "a": "The required distance increases as speed increases.", "tag": "concept"}, {"id": "c4_30", "num": 30, "q": "If a student goes from ground floor to 4th floor ($12\\text{ m}$) and back to 2nd floor ($6\\text{ m}$), what is the total vertical distance?", "a": "$18\\text{ m}$", "tag": "formula"}, {"id": "c4_31", "num": 31, "q": "If a student goes from ground floor to 4th floor ($12\\text{ m}$) and back to 2nd floor ($6\\text{ m}$), what is the displacement?", "a": "$6\\text{ m}$ upwards.", "tag": "formula"}, {"id": "c4_32", "num": 32, "q": "What does science value more than accurate calculations according to the text?", "a": "Careful reasoning.", "tag": "concept"}, {"id": "c4_33", "num": 33, "q": "What tool helps build intuition and detect errors in scientific thinking?", "a": "Learning to estimate values.", "tag": "concept"}, {"id": "c4_34", "num": 34, "q": "Why does scientific language use specific terms like 'cell' or 'reaction'?", "a": "To communicate ideas clearly and unambiguously.", "tag": "concept"}, {"id": "c4_35", "num": 35, "q": "Which symbol is used to represent electric current in science?", "a": "$I$", "tag": "formula"}, {"id": "c4_36", "num": 36, "q": "What two symbols frame the page numbers of the 'Exploration' textbook?", "a": "A magnifying glass and a compass.", "tag": "formula"}, {"id": "c4_37", "num": 37, "q": "What is the term for the tendency of objects to resist changes in motion?", "a": "Inertia.", "tag": "concept"}, {"id": "c4_38", "num": 38, "q": "How many chapters does the textbook 'Exploration' contain?", "a": "13 chapters.", "tag": "concept"}, {"id": "c4_39", "num": 39, "q": "What is the purpose of 'Pause and Ponder' sections in the text?", "a": "To encourage self-assessment and critical thinking.", "tag": "concept"}, {"id": "c4_40", "num": 40, "q": "According to Chapter 4, what defines 'motion'?", "a": "Change in position relative to a reference point over time.", "tag": "concept"}, {"id": "c4_41", "num": 41, "q": "In the equation $v = u + at$, what does $a$ stand for?", "a": "Constant acceleration.", "tag": "formula"}, {"id": "c4_42", "num": 42, "q": "Which symbol represents mass in scientific shared language?", "a": "$m$", "tag": "formula"}, {"id": "c4_43", "num": 43, "q": "Is displacement a scalar or a vector quantity based on the need for direction?", "a": "Vector quantity.", "tag": "concept"}, {"id": "c4_44", "num": 44, "q": "What is 'linear motion'?", "a": "Motion in a straight line.", "tag": "concept"}, {"id": "c4_45", "num": 45, "q": "What determines if an object is 'accelerating'?", "a": "A change in its velocity (speed or direction).", "tag": "concept"}], "5": [{"id": "c5_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c5_2", "num": 2, "q": "In scientific modeling, what is the purpose of deliberately ignoring certain details?", "a": "To simplify systems and find answers to specific questions.", "tag": "concept"}, {"id": "c5_3", "num": 3, "q": "According to the text, which physicist studied star light to explain stellar color through temperature?", "a": "Meghnad Saha", "tag": "concept"}, {"id": "c5_4", "num": 4, "q": "Why is mathematics considered a powerful language in science?", "a": "It expresses relationships between quantities clearly and precisely.", "tag": "concept"}, {"id": "c5_5", "num": 5, "q": "What is the exact value of the speed of light ($c$) in a vacuum?", "a": "$299792458 \\text{ m/s}$", "tag": "formula"}, {"id": "c5_6", "num": 6, "q": "What is the primary benefit of using standard units (SI) globally?", "a": "To avoid errors, conversions, and ensure fairness in trade.", "tag": "concept"}, {"id": "c5_7", "num": 7, "q": "Definition: Scientific Law", "a": "A description of a regular pattern observed in nature.", "tag": "concept"}, {"id": "c5_8", "num": 8, "q": "How does a scientific theory differ from a scientific law?", "a": "A theory provides an explanation for why patterns occur.", "tag": "concept"}, {"id": "c5_9", "num": 9, "q": "In science, a _____ is an explanation based on careful testing and critical examination, not a guess.", "a": "Theory", "tag": "fib"}, {"id": "c5_10", "num": 10, "q": "What is the primary goal of making a rough estimate in scientific reasoning?", "a": "To check whether a result is reasonable or impossible.", "tag": "concept"}, {"id": "c5_11", "num": 11, "q": "The ability of the human eye to see two close objects as separate is called _____.", "a": "Resolution", "tag": "fib"}, {"id": "c5_12", "num": 12, "q": "What is the limit of resolution of the average human eye?", "a": "$0.1 \\text{ mm}$", "tag": "formula"}, {"id": "c5_13", "num": 13, "q": "Who first observed and named 'cells' in a thin slice of cork in 1665?", "a": "Robert Hooke", "tag": "concept"}, {"id": "c5_14", "num": 14, "q": "Calculate: If $1 \\text{ mm}$ equals $1000 \\text{ \\mu m}$, how many micrometers are in $5 \\text{ mm}$?", "a": "$5000 \\text{ \\mu m}$", "tag": "formula"}, {"id": "c5_15", "num": 15, "q": "Formula: Estimated size of a cell under a microscope", "a": "$\\text{Diameter of visible field} / \\text{Number of cells along diameter}$", "tag": "formula"}, {"id": "c5_16", "num": 16, "q": "Which microscope uses a beam of electrons to reveal fine details of a cell structure?", "a": "Electron microscope", "tag": "concept"}, {"id": "c5_17", "num": 17, "q": "What term describes the cell membrane's ability to allow only specific substances to pass through?", "a": "Selectively permeable", "tag": "concept"}, {"id": "c5_18", "num": 18, "q": "Term: Osmosis", "a": "The diffusion of water across a selectively permeable membrane.", "tag": "concept"}, {"id": "c5_19", "num": 19, "q": "In an _____ solution, the solute concentration outside the cell equals the concentration inside.", "a": "Isotonic", "tag": "fib"}, {"id": "c5_20", "num": 20, "q": "What happens to a cell when placed in a hypotonic solution?", "a": "Water enters the cell, causing it to swell.", "tag": "concept"}, {"id": "c5_21", "num": 21, "q": "What happens to a cell when placed in a hypertonic solution?", "a": "Water leaves the cell, causing it to shrink.", "tag": "concept"}, {"id": "c5_22", "num": 22, "q": "The 'fluid' part of the fluid-mosaic model refers to the ability of _____ to move sideways.", "a": "Molecules", "tag": "fib"}, {"id": "c5_23", "num": 23, "q": "What is the primary chemical component of the plant cell wall?", "a": "Cellulose", "tag": "concept"}, {"id": "c5_24", "num": 24, "q": "What is the effect of a rigid cell wall on plant cells in hypotonic environments?", "a": "It prevents the cell from bursting by exerting pressure.", "tag": "concept"}, {"id": "c5_25", "num": 25, "q": "Which type of cells lack a well-defined nucleus and membrane-bound organelles?", "a": "Prokaryotic cells", "tag": "concept"}, {"id": "c5_26", "num": 26, "q": "The genetic material in a prokaryotic cell is found in an undefined region called the _____.", "a": "Nucleoid", "tag": "fib"}, {"id": "c5_27", "num": 27, "q": "Which organelle is known as the 'house of coded instructions'?", "a": "Nucleus", "tag": "concept"}, {"id": "c5_28", "num": 28, "q": "What are the functional segments of DNA called?", "a": "Genes", "tag": "concept"}, {"id": "c5_29", "num": 29, "q": "Chromosomes are composed of which two primary substances?", "a": "DNA and proteins", "tag": "concept"}, {"id": "c5_30", "num": 30, "q": "Why do mature human Red Blood Cells (RBCs) lack a nucleus?", "a": "To provide more space for hemoglobin to transport oxygen.", "tag": "concept"}, {"id": "c5_31", "num": 31, "q": "Which organelle serves as the primary site for protein synthesis?", "a": "Ribosomes", "tag": "concept"}, {"id": "c5_32", "num": 32, "q": "What is the main function of the Smooth Endoplasmic Reticulum (SER)?", "a": "Synthesis of fats (lipids) and hormones.", "tag": "concept"}, {"id": "c5_33", "num": 33, "q": "Which organelle functions as the cell's 'post office' by packaging and dispatching materials?", "a": "Golgi apparatus", "tag": "concept"}, {"id": "c5_34", "num": 34, "q": "Why are lysosomes referred to as the 'clean-up system' of the cell?", "a": "They contain enzymes that break down waste and damaged organelles.", "tag": "concept"}, {"id": "c5_35", "num": 35, "q": "Which organelle is known as the 'powerhouse of the cell'?", "a": "Mitochondria", "tag": "concept"}, {"id": "c5_36", "num": 36, "q": "Mitochondria produce energy in the form of molecules called _____.", "a": "$ATP$ ($Adenosine Triphosphate$)", "tag": "fib"}, {"id": "c5_37", "num": 37, "q": "What is the function of the finger-like projections called cristae in mitochondria?", "a": "To increase surface area for chemical reactions producing energy.", "tag": "concept"}, {"id": "c5_38", "num": 38, "q": "Which two organelles possess their own DNA and ribosomes?", "a": "Mitochondria and Plastids", "tag": "concept"}, {"id": "c5_39", "num": 39, "q": "Identify the colorless plastids used for storing food materials like starch and oils.", "a": "Leucoplasts", "tag": "concept"}, {"id": "c5_40", "num": 40, "q": "What are the colored plastids called that give flowers and fruits their varied hues?", "a": "Chromoplasts", "tag": "concept"}, {"id": "c5_41", "num": 41, "q": "The fluid-filled storage sacs that provide turgidity and rigidity to plant cells are _____.", "a": "Vacuoles", "tag": "fib"}, {"id": "c5_42", "num": 42, "q": "What is the liquid found inside a plant's large central vacuole called?", "a": "Cell sap", "tag": "concept"}, {"id": "c5_43", "num": 43, "q": "Term: Cell Division", "a": "The process by which new cells are formed from pre-existing cells.", "tag": "concept"}, {"id": "c5_44", "num": 44, "q": "Which type of cell division results in two genetically identical daughter cells?", "a": "Mitosis", "tag": "concept"}, {"id": "c5_45", "num": 45, "q": "What is the primary purpose of meiosis in organisms?", "a": "Sexual reproduction through the creation of genetic diversity.", "tag": "concept"}, {"id": "c5_46", "num": 46, "q": "How many daughter cells are produced at the end of a single meiosis process?", "a": "Four", "tag": "concept"}, {"id": "c5_47", "num": 47, "q": "According to the cell theory, all cells arise from _____.", "a": "Pre-existing cells", "tag": "fib"}, {"id": "c5_48", "num": 48, "q": "What biological phenomenon usually stops cell division when cells come in contact with neighbors?", "a": "Contact inhibition", "tag": "concept"}, {"id": "c5_49", "num": 49, "q": "The uncontrolled division of cells leading to the formation of tumors is characteristic of _____.", "a": "Cancer", "tag": "fib"}, {"id": "c5_50", "num": 50, "q": "Concept: Totipotency", "a": "Definition: The ability of a single mature cell to develop into a complete plant.", "tag": "concept"}, {"id": "c5_51", "num": 51, "q": "What is Programmed Cell Death (PCD)?", "a": "A regulated process of selective cell destruction for normal development.", "tag": "concept"}, {"id": "c5_52", "num": 52, "q": "Which structural feature differentiates Rough Endoplasmic Reticulum (RER) from SER?", "a": "The presence of ribosomes attached to its surface.", "tag": "concept"}, {"id": "c5_53", "num": 53, "q": "What are the 'at rest' entangled masses of thread-like DNA structures called?", "a": "Chromatin", "tag": "concept"}, {"id": "c5_54", "num": 54, "q": "Identify the semi-fluid substance found inside a chloroplast.", "a": "Stroma", "tag": "concept"}, {"id": "c5_55", "num": 55, "q": "Which scientist proposed that any living plant cell can develop into a complete plant (totipotency)?", "a": "Gottlieb Haberlandt", "tag": "concept"}, {"id": "c5_56", "num": 56, "q": "What is the function of the nucleolus?", "a": "It is the site where synthesis of ribosomal subunits takes place.", "tag": "concept"}, {"id": "c5_57", "num": 57, "q": "Define: Protoplasm (implied context of cell interior)", "a": "The entire living content of a cell, including cytoplasm and nucleus.", "tag": "concept"}, {"id": "c5_58", "num": 58, "q": "What determines the reliability of a weather forecast as it looks further into the future?", "a": "It becomes less certain due to tiny differences in initial conditions.", "tag": "concept"}, {"id": "c5_59", "num": 59, "q": "Why is 'viral' social media advice to avoid food during eclipses considered scientifically unsupportable?", "a": "No physical, chemical, or biological mechanism supports such claims.", "tag": "concept"}, {"id": "c5_60", "num": 60, "q": "Which component of the cytoskeleton provides structural support and enables cell movement?", "a": "Network of fine fibers", "tag": "concept"}], "6": [{"id": "c6_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c6_2", "num": 2, "q": "What three characteristics of an object can a force change?", "a": "State of rest, speed/direction of motion, and shape.", "tag": "concept"}, {"id": "c6_3", "num": 3, "q": "Which physical quantity requires both magnitude and direction, like velocity?", "a": "Force", "tag": "concept"}, {"id": "c6_4", "num": 4, "q": "What is the SI unit of force?", "a": "$newton$ ($N$)", "tag": "formula"}, {"id": "c6_5", "num": 5, "q": "Which scientific instrument is typically used to measure the magnitude of force?", "a": "Spring balance", "tag": "concept"}, {"id": "c6_6", "num": 6, "q": "How is the weight of an object defined in terms of force?", "a": "The gravitational force with which Earth pulls the object.", "tag": "concept"}, {"id": "c6_7", "num": 7, "q": "In what direction does the force of friction always act?", "a": "Opposite to the direction of motion.", "tag": "concept"}, {"id": "c6_8", "num": 8, "q": "What is the term for the upward force exerted by a surface?", "a": "Normal force", "tag": "concept"}, {"id": "c6_9", "num": 9, "q": "Under what condition does an object at rest remain at rest according to Newton's first law?", "a": "Unless a net force acts upon the object.", "tag": "concept"}, {"id": "c6_10", "num": 10, "q": "The property of an object to resist changes in its state of motion is _____.", "a": "Inertia", "tag": "fib"}, {"id": "c6_11", "num": 11, "q": "What is the acceleration of an object when the net force acting on it is zero?", "a": "Zero", "tag": "concept"}, {"id": "c6_12", "num": 12, "q": "State the mathematical formula for Newton's second law of motion.", "a": "$F = ma$", "tag": "formula"}, {"id": "c6_13", "num": 13, "q": "How is acceleration related to the magnitude of the net force?", "a": "Directly proportional", "tag": "concept"}, {"id": "c6_14", "num": 14, "q": "For a constant force, what is the relationship between an object's mass and its acceleration?", "a": "Inversely proportional", "tag": "concept"}, {"id": "c6_15", "num": 15, "q": "One $newton$ is defined as the force that produces an acceleration of $1\\ m\\ s^{-2}$ in a mass of _____.", "a": "$1\\ kg$", "tag": "fib"}, {"id": "c6_16", "num": 16, "q": "Express the unit $N$ in terms of base SI units.", "a": "$kg\\ m\\ s^{-2}$", "tag": "formula"}, {"id": "c6_17", "num": 17, "q": "In what direction does an object accelerate relative to the net force applied?", "a": "In the same direction as the net force.", "tag": "concept"}, {"id": "c6_18", "num": 18, "q": "Newton’s third law states that whenever one object exerts a force on another, the second object exerts a force that is _____.", "a": "Equal in magnitude and opposite in direction.", "tag": "fib"}, {"id": "c6_19", "num": 19, "q": "Does Newton's third law apply to non-contact forces like gravity?", "a": "Yes, it applies to all types of forces.", "tag": "concept"}, {"id": "c6_20", "num": 20, "q": "Why do interacting objects of different masses experience different accelerations despite equal force magnitudes?", "a": "Acceleration is inversely related to mass ($a = \\frac{F}{m}$).", "tag": "concept"}, {"id": "c6_21", "num": 21, "q": "What is the net force acting on a toy car moving with a constant velocity of $0.5\\ m\\ s^{-1}$?", "a": "Zero", "tag": "concept"}, {"id": "c6_22", "num": 22, "q": "Why does a fireperson struggle to hold a hose issuing water at high speed?", "a": "The reaction force of the water pushes the hose backward.", "tag": "concept"}, {"id": "c6_23", "num": 23, "q": "How can a spacecraft in a region of negligible gravity change its velocity?", "a": "By ejecting mass in the opposite direction (action-reaction).", "tag": "concept"}, {"id": "c6_24", "num": 24, "q": "In scientific modeling, how is a moving car often represented to simplify physics calculations?", "a": "As a single point", "tag": "concept"}, {"id": "c6_25", "num": 25, "q": "Why do scientists deliberately ignore details like air resistance when studying basic gravity?", "a": "To keep models simple enough to find answers.", "tag": "concept"}, {"id": "c6_26", "num": 26, "q": "How are atoms and molecules typically represented in chemical models?", "a": "Spheres and bonds", "tag": "concept"}, {"id": "c6_27", "num": 27, "q": "Which branch of science provides concepts for particle motion and electrostatic attraction in mask filtration?", "a": "Physics", "tag": "concept"}, {"id": "c6_28", "num": 28, "q": "A negative sign in a force calculation (e.g., $-3000\\ N$) typically indicates that the force acts _____.", "a": "Opposite to the direction of motion.", "tag": "fib"}, {"id": "c6_29", "num": 29, "q": "Which specific stage of life corresponds to Grades 9 to 12 in the education framework?", "a": "Secondary (Adolescent) stage", "tag": "concept"}, {"id": "c6_30", "num": 30, "q": "The title of the textbook, 'Exploration', refers to the process of investigating the unknown by _____.", "a": "Observing, posing questions, and experimenting.", "tag": "fib"}, {"id": "c6_31", "num": 31, "q": "According to the NCF-SE 2023, what is a primary aim of science education at the secondary stage?", "a": "Developing scientific temper and critical thinking.", "tag": "concept"}, {"id": "c6_32", "num": 32, "q": "At what scales do Newton's laws of motion require modification?", "a": "Atomic scales, massive objects, and speeds near light speed.", "tag": "concept"}, {"id": "c6_33", "num": 33, "q": "What is the name of the mysterious energy scientists use to explain the accelerating expansion of the Universe?", "a": "Dark energy", "tag": "concept"}, {"id": "c6_34", "num": 34, "q": "Newton's second law can be derived using the formula for work ($W = F \\times s$) and which kinematic equation?", "a": "$v^2 = u^2 + 2as$", "tag": "formula"}, {"id": "c6_35", "num": 35, "q": "According to the work-energy theorem, the work done on an object results in a change in its _____.", "a": "Energy", "tag": "fib"}, {"id": "c6_36", "num": 36, "q": "What keeps electrons attracted to the nucleus in an atom?", "a": "Electrostatic attraction between electrons and protons.", "tag": "concept"}, {"id": "c6_37", "num": 37, "q": "In a neutral atom, the number of electrons is equal to the number of _____.", "a": "Protons", "tag": "fib"}, {"id": "c6_38", "num": 38, "q": "Who presented the atomic theory in 1808 that served as a turning point in matter studies?", "a": "John Dalton", "tag": "concept"}, {"id": "c6_39", "num": 39, "q": "How does sound from a point source propagate through the air?", "a": "As spherical waves in all directions.", "tag": "concept"}, {"id": "c6_40", "num": 40, "q": "What causes the loud sound pulse during a clap of thunder or firecracker explosion?", "a": "Rapid expansion of air or gases when heated suddenly.", "tag": "concept"}], "7": [{"id": "c7_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c7_2", "num": 2, "q": "What is the scientific definition of work?", "a": "Force multiplied by displacement in the direction of force.", "tag": "concept"}, {"id": "c7_3", "num": 3, "q": "Mathematical formula for work ($W$) done by a force ($F$) over displacement ($s$)?", "a": "$W = F \\times s$", "tag": "formula"}, {"id": "c7_4", "num": 4, "q": "What is the SI unit of work?", "a": "Joule ($J$).", "tag": "formula"}, {"id": "c7_5", "num": 5, "q": "One Joule is defined as the work done by a force of _____ displacing an object by $1\\ m$.", "a": "$1\\ Newton$ ($1\\ N$).", "tag": "fib"}, {"id": "c7_6", "num": 6, "q": "What is the scientific definition of energy?", "a": "The capacity to do work.", "tag": "concept"}, {"id": "c7_7", "num": 7, "q": "What is the SI unit of energy?", "a": "Joule ($J$).", "tag": "formula"}, {"id": "c7_8", "num": 8, "q": "According to the Work-Energy Theorem, work done on an object equals its _____.", "a": "Change in energy.", "tag": "fib"}, {"id": "c7_9", "num": 9, "q": "Energy possessed by an object specifically due to its motion?", "a": "Kinetic energy.", "tag": "concept"}, {"id": "c7_10", "num": 10, "q": "Mathematical formula for Kinetic Energy ($K$)?", "a": "$K = \\frac{1}{2}mv^{2}$", "tag": "formula"}, {"id": "c7_11", "num": 11, "q": "Energy stored in an object due to its position or deformation?", "a": "Potential energy.", "tag": "concept"}, {"id": "c7_12", "num": 12, "q": "Formula for gravitational potential energy ($U$) at a height ($h$)?", "a": "$U = mgh$", "tag": "formula"}, {"id": "c7_13", "num": 13, "q": "Mechanical energy is defined as the sum of _____ and _____.", "a": "Kinetic energy and potential energy.", "tag": "fib"}, {"id": "c7_14", "num": 14, "q": "In a free-falling object, what happens to the total mechanical energy?", "a": "It remains constant.", "tag": "concept"}, {"id": "c7_15", "num": 15, "q": "Energy stored in the bonds of food and fuel is called _____ energy.", "a": "Chemical.", "tag": "fib"}, {"id": "c7_16", "num": 16, "q": "Energy associated with the vibrations of air or other molecules?", "a": "Sound energy.", "tag": "concept"}, {"id": "c7_17", "num": 17, "q": "The scientist after whom the SI unit of energy is named?", "a": "James Prescott Joule.", "tag": "formula"}, {"id": "c7_18", "num": 18, "q": "Apart from mechanical work, how else can energy be transferred between objects?", "a": "As heat.", "tag": "concept"}, {"id": "c7_19", "num": 19, "q": "How does the Sun's energy reach the Earth?", "a": "Through radiation.", "tag": "concept"}, {"id": "c7_20", "num": 20, "q": "What is the scientific definition of power?", "a": "The rate at which work is done.", "tag": "concept"}, {"id": "c7_21", "num": 21, "q": "Mathematical formula for power ($P$) using work ($W$) and time ($t$)?", "a": "$P = \\frac{W}{t}$", "tag": "formula"}, {"id": "c7_22", "num": 22, "q": "What is the SI unit of power?", "a": "Watt ($W$).", "tag": "formula"}, {"id": "c7_23", "num": 23, "q": "One Watt is equal to one _____ per second.", "a": "Joule ($J\\cdot s^{-1}$).", "tag": "fib"}, {"id": "c7_24", "num": 24, "q": "Devices that make work easier by changing force magnitude or direction?", "a": "Simple machines.", "tag": "concept"}, {"id": "c7_25", "num": 25, "q": "In simple machines, what is the 'effort'?", "a": "The force applied to the machine.", "tag": "concept"}, {"id": "c7_26", "num": 26, "q": "In simple machines, what is the 'load'?", "a": "The force that needs to be overcome.", "tag": "concept"}, {"id": "c7_27", "num": 27, "q": "Mathematical definition of Mechanical Advantage ($M.A.$)?", "a": "The ratio of load to effort.", "tag": "concept"}, {"id": "c7_28", "num": 28, "q": "Formula: $Mechanical\\ Advantage =$ _____", "a": "$\\frac{Load}{Effort}$", "tag": "fib"}, {"id": "c7_29", "num": 29, "q": "What is the mechanical advantage of a single fixed pulley?", "a": "$1$", "tag": "formula"}, {"id": "c7_30", "num": 30, "q": "What is the primary convenience provided by a fixed pulley?", "a": "It changes the direction of the effort.", "tag": "concept"}, {"id": "c7_31", "num": 31, "q": "The fixed point about which a lever rotates is called the _____.", "a": "Fulcrum.", "tag": "fib"}, {"id": "c7_32", "num": 32, "q": "What is the 'effort arm' in a lever?", "a": "Distance from the fulcrum to the applied force.", "tag": "concept"}, {"id": "c7_33", "num": 33, "q": "Which part is in the middle for a Class I lever?", "a": "Fulcrum.", "tag": "concept"}, {"id": "c7_34", "num": 34, "q": "Which part is in the middle for a Class II lever?", "a": "Load.", "tag": "concept"}, {"id": "c7_35", "num": 35, "q": "Which part is in the middle for a Class III lever?", "a": "Effort.", "tag": "concept"}, {"id": "c7_36", "num": 36, "q": "A lemon squeezer is an example of which class of lever?", "a": "Class II lever.", "tag": "concept"}, {"id": "c7_37", "num": 37, "q": "Tweezers and tongs are examples of which class of lever?", "a": "Class III lever.", "tag": "concept"}, {"id": "c7_38", "num": 38, "q": "Why is a spoon used as a lever to open a lid?", "a": "To increase mechanical advantage and reduce required effort.", "tag": "concept"}, {"id": "c7_39", "num": 39, "q": "Why do real machines eventually slow down and stop?", "a": "Energy is dissipated as heat due to friction.", "tag": "concept"}, {"id": "c7_40", "num": 40, "q": "Transformation: What energy change occurs when a watch spring unwinds?", "a": "Potential energy to kinetic energy.", "tag": "concept"}, {"id": "c7_41", "num": 41, "q": "Transformation: What energy change occurs during photosynthesis?", "a": "Light energy to chemical energy.", "tag": "concept"}, {"id": "c7_42", "num": 42, "q": "Transformation: What energy change occurs in a glowing electric bulb?", "a": "Electrical energy to light and thermal energy.", "tag": "concept"}, {"id": "c7_43", "num": 43, "q": "Does work done against friction lead to stored potential energy?", "a": "No.", "tag": "concept"}, {"id": "c7_44", "num": 44, "q": "Why do you push hard objects closer to the fulcrum when using scissors?", "a": "To shorten the load arm and increase mechanical advantage.", "tag": "concept"}, {"id": "c7_45", "num": 45, "q": "Neglecting friction, does the mass of a child affect their velocity at the bottom of a slide?", "a": "No.", "tag": "concept"}, {"id": "c7_46", "num": 46, "q": "What mysterious energy is proposed to explain the accelerating expansion of the Universe?", "a": "Dark energy.", "tag": "concept"}, {"id": "c7_47", "num": 47, "q": "The sum of kinetic and potential energy is known as _____ energy.", "a": "Mechanical.", "tag": "fib"}, {"id": "c7_48", "num": 48, "q": "If a weightlifter does $1500\\ J$ of work in $5$ seconds, what is her power?", "a": "$300\\ W$.", "tag": "formula"}], "8": [{"id": "c8_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c8_2", "num": 2, "q": "What subatomic particle's count in the nucleus defines the atomic number of an element?", "a": "Protons", "tag": "concept"}, {"id": "c8_3", "num": 3, "q": "Which symbol is used to designate the atomic number of an element?", "a": "$Z$", "tag": "formula"}, {"id": "c8_4", "num": 4, "q": "What two factors of an element are determined by its atomic number?", "a": "Identity and chemical behavior", "tag": "concept"}, {"id": "c8_5", "num": 5, "q": "Term: Valency", "a": "Definition: The combining capacity of an atom.", "tag": "formula"}, {"id": "c8_6", "num": 6, "q": "Why is the combining capacity of elements often expressed in terms of hydrogen or chlorine?", "a": "Both possess a combining capacity of one.", "tag": "concept"}, {"id": "c8_7", "num": 7, "q": "In the molecule $H_2O$, what is the combining capacity (valency) of oxygen?", "a": "Two", "tag": "formula"}, {"id": "c8_8", "num": 8, "q": "What is the combining capacity of nitrogen in the molecule $NH_3$?", "a": "Three", "tag": "concept"}, {"id": "c8_9", "num": 9, "q": "Determine the combining capacity of magnesium in the compound $MgCl_2$.", "a": "Two", "tag": "concept"}, {"id": "c8_10", "num": 10, "q": "Atoms with a full shell of eight electrons in their valence shell are considered _____.", "a": "Stable", "tag": "fib"}, {"id": "c8_11", "num": 11, "q": "What is the term for the stability achieved when an atom has eight electrons in its outermost shell?", "a": "Octet", "tag": "concept"}, {"id": "c8_12", "num": 12, "q": "For elements with only one shell, what is the maximum number of electrons for stability?", "a": "Two", "tag": "concept"}, {"id": "c8_13", "num": 13, "q": "Atoms lose, gain, or share electrons specifically to achieve a _____.", "a": "Valence octet", "tag": "fib"}, {"id": "c8_14", "num": 14, "q": "What property of an atom can vary while the number of protons remains the same?", "a": "Number of neutrons", "tag": "concept"}, {"id": "c8_15", "num": 15, "q": "Who is recognized as the father of the Indian nuclear programme?", "a": "Homi Jehangir Bhabha", "tag": "concept"}, {"id": "c8_16", "num": 16, "q": "Which institution was established by Homi J. Bhabha for fundamental research?", "a": "Tata Institute of Fundamental Research (TIFR)", "tag": "concept"}, {"id": "c8_17", "num": 17, "q": "What does the abbreviation BARC stand for?", "a": "Bhabha Atomic Research Centre", "tag": "concept"}, {"id": "c8_18", "num": 18, "q": "What were the primary peaceful uses of atomic energy advocated by Bhabha?", "a": "Electricity, agriculture, and medical treatments.", "tag": "concept"}, {"id": "c8_19", "num": 19, "q": "What keeps electrons attracted to the nucleus instead of flying away from the atom?", "a": "The positive charge of the nucleus (protons).", "tag": "concept"}, {"id": "c8_20", "num": 20, "q": "In a neutral atom, how does the number of electrons compare to the number of protons?", "a": "They are equal.", "tag": "concept"}, {"id": "c8_21", "num": 21, "q": "What is the electronic configuration of an element with atomic number 12?", "a": "(2, 8, 2)", "tag": "formula"}, {"id": "c8_22", "num": 22, "q": "What is the electronic configuration of an element with atomic number 16?", "a": "(2, 8, 6)", "tag": "formula"}, {"id": "c8_23", "num": 23, "q": "What is the electronic configuration of an element with atomic number 18?", "a": "(2, 8, 8)", "tag": "formula"}, {"id": "c8_24", "num": 24, "q": "Identify the element: Mass number 23, 11 protons, reacts vigorously with water.", "a": "Sodium", "tag": "concept"}, {"id": "c8_25", "num": 25, "q": "How many neutrons are present in an atom of Sodium with mass number 23 and 11 protons?", "a": "12", "tag": "concept"}, {"id": "c8_26", "num": 26, "q": "An atom has 26 electrons, 26 protons, and 30 neutrons. What is its mass number?", "a": "56", "tag": "concept"}, {"id": "c8_27", "num": 27, "q": "Concept: Isotopes", "a": "Definition: Atoms of the same element with different numbers of neutrons.", "tag": "concept"}, {"id": "c8_28", "num": 28, "q": "Concept: Isobars", "a": "Definition: Atoms of different elements having the same mass number.", "tag": "concept"}, {"id": "c8_29", "num": 29, "q": "If an atom has 12 protons and 12 neutrons, what is its mass number?", "a": "24", "tag": "concept"}, {"id": "c8_30", "num": 30, "q": "What is the number of protons in an atom of Aluminum ($Al$)?", "a": "13", "tag": "concept"}, {"id": "c8_31", "num": 31, "q": "If electrons were replaced by particles 500 times heavier but with the same charge, what would happen to the atomic number?", "a": "It would remain the same.", "tag": "concept"}, {"id": "c8_32", "num": 32, "q": "How would replacing electrons with particles 500 times heavier affect the overall charge of a neutral atom?", "a": "It would remain neutral (zero charge).", "tag": "concept"}, {"id": "c8_33", "num": 33, "q": "What scientific instrument produced the image showing individual atoms on a surface in Fig. 8.15?", "a": "Scanning Tunneling Microscope (STM)", "tag": "concept"}, {"id": "c8_34", "num": 34, "q": "Calculate the number of neutrons in the silicon isotope represented by $_{14}^{28}Si$.", "a": "14", "tag": "formula"}, {"id": "c8_35", "num": 35, "q": "How many electrons are in the outermost shell of Lithium ($Z=3$)?", "a": "One", "tag": "concept"}, {"id": "c8_36", "num": 36, "q": "What is the valence electron count for Nitrogen ($Z=7$)?", "a": "Five", "tag": "concept"}, {"id": "c8_37", "num": 37, "q": "How many protons are found in an atom of Lithium?", "a": "Three", "tag": "concept"}, {"id": "c8_38", "num": 38, "q": "What determines the chemical identity of an atom?", "a": "The number of protons (Atomic Number).", "tag": "concept"}, {"id": "c8_39", "num": 39, "q": "The sum of the number of protons and neutrons in an atom's nucleus is called the _____.", "a": "Mass number", "tag": "fib"}, {"id": "c8_40", "num": 40, "q": "Which subatomic particle has a mass so small that it is usually ignored when calculating mass number?", "a": "Electron", "tag": "concept"}, {"id": "c8_41", "num": 41, "q": "What is the electronic configuration of Nitrogen?", "a": "(2, 5)", "tag": "formula"}, {"id": "c8_42", "num": 42, "q": "What is the electronic configuration of Lithium?", "a": "(2, 1)", "tag": "formula"}, {"id": "c8_43", "num": 43, "q": "The regions around the nucleus where electrons move are called _____.", "a": "Orbits (or energy levels)", "tag": "fib"}, {"id": "c8_44", "num": 44, "q": "Which element has an atomic number of 3?", "a": "Lithium", "tag": "concept"}, {"id": "c8_45", "num": 45, "q": "Which subatomic particles are found within the nucleus of an atom?", "a": "Protons and Neutrons", "tag": "concept"}], "9": [{"id": "c9_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c9_2", "num": 2, "q": "The law stating that mass can neither be created nor destroyed in a chemical reaction is the Law of _____.", "a": "Conservation of Mass", "tag": "fib"}, {"id": "c9_3", "num": 3, "q": "Which law states that a compound always contains the same elements combined in a fixed mass ratio?", "a": "Law of Definite Proportions", "tag": "concept"}, {"id": "c9_4", "num": 4, "q": "According to Dalton’s Atomic Theory, all matter is made up of tiny particles called _____.", "a": "Atoms", "tag": "fib"}, {"id": "c9_5", "num": 5, "q": "How did John Dalton describe the divisibility of atoms in his postulates?", "a": "Atoms are indivisible particles.", "tag": "concept"}, {"id": "c9_6", "num": 6, "q": "In Dalton’s theory, what is true about the atoms of a given element?", "a": "They are identical in mass and chemical properties.", "tag": "concept"}, {"id": "c9_7", "num": 7, "q": "Atoms combine in the ratio of _____ whole numbers to form compounds.", "a": "Simple", "tag": "fib"}, {"id": "c9_8", "num": 8, "q": "Concept: Molecule", "a": "Definition: Electrically neutral entity of atoms capable of independent existence.", "tag": "concept"}, {"id": "c9_9", "num": 9, "q": "What type of bond is formed by the sharing of electrons between atoms?", "a": "Covalent bond", "tag": "concept"}, {"id": "c9_10", "num": 10, "q": "What type of bond is formed by the transfer of electrons from one atom to another?", "a": "Ionic bond", "tag": "concept"}, {"id": "c9_11", "num": 11, "q": "A positively charged ion is known as a/an _____.", "a": "Cation", "tag": "fib"}, {"id": "c9_12", "num": 12, "q": "A negatively charged ion is known as a/an _____.", "a": "Anion", "tag": "fib"}, {"id": "c9_13", "num": 13, "q": "The combining capacity of an atom is called its _____.", "a": "Valency", "tag": "fib"}, {"id": "c9_14", "num": 14, "q": "What is the valency of a Sodium ion ($Na^{+}$)?", "a": "1", "tag": "formula"}, {"id": "c9_15", "num": 15, "q": "What is the valency of a Calcium ion ($Ca^{2+}$)?", "a": "2", "tag": "formula"}, {"id": "c9_16", "num": 16, "q": "What is the valency of an Aluminium ion ($Al^{3+}$)?", "a": "3", "tag": "formula"}, {"id": "c9_17", "num": 17, "q": "What is the valency of an Oxide ion ($O^{2-}$)?", "a": "2", "tag": "formula"}, {"id": "c9_18", "num": 18, "q": "What is the valency of a Chloride ion ($Cl^{-}$)?", "a": "1", "tag": "formula"}, {"id": "c9_19", "num": 19, "q": "Formula: Molecular Mass", "a": "The sum of atomic masses of all atoms in a molecule.", "tag": "formula"}, {"id": "c9_20", "num": 20, "q": "If the atomic mass of $H = 1\\ u$ and $O = 16\\ u$, what is the molecular mass of $H_{2}O$?", "a": "$18\\ u$", "tag": "formula"}, {"id": "c9_21", "num": 21, "q": "If the atomic mass of $C = 12\\ u$ and $H = 1\\ u$, what is the molecular mass of Methane ($CH_{4}$)?", "a": "$16\\ u$", "tag": "formula"}, {"id": "c9_22", "num": 22, "q": "The sum of atomic masses of all atoms in the simplest whole-number ratio of an ionic compound is the _____ unit mass.", "a": "Formula", "tag": "fib"}, {"id": "c9_23", "num": 23, "q": "Atoms reach stability by achieving a/an _____ of electrons in their valence shell.", "a": "Octet", "tag": "fib"}, {"id": "c9_24", "num": 24, "q": "Which subatomic particle was discovered by J. J. Thomson using cathode rays?", "a": "Electron", "tag": "concept"}, {"id": "c9_25", "num": 25, "q": "The dense, positively charged center of an atom is called the _____.", "a": "Nucleus", "tag": "fib"}, {"id": "c9_26", "num": 26, "q": "Which scientist proposed that electrons move in fixed energy levels or shells?", "a": "Niels Bohr", "tag": "concept"}, {"id": "c9_27", "num": 27, "q": "Which subatomic particle has a neutral charge and was discovered by James Chadwick?", "a": "Neutron", "tag": "concept"}, {"id": "c9_28", "num": 28, "q": "The number of protons in the nucleus of an atom defines its _____ number.", "a": "Atomic", "tag": "fib"}, {"id": "c9_29", "num": 29, "q": "The total number of protons and neutrons in an atom is its _____ number.", "a": "Mass", "tag": "fib"}, {"id": "c9_30", "num": 30, "q": "Atoms of the same element with different numbers of neutrons are called _____.", "a": "Isotopes", "tag": "fib"}, {"id": "c9_31", "num": 31, "q": "Atoms of different elements with the same mass number are called _____.", "a": "Isobars", "tag": "fib"}, {"id": "c9_32", "num": 32, "q": "In the Bohr model, what letters are used to name the electron shells starting from the center?", "a": "K, L, M, N", "tag": "concept"}, {"id": "c9_33", "num": 33, "q": "What happens to alpha particles in Rutherford’s experiment that indicates the nucleus is very small and dense?", "a": "A few particles bounce back sharply.", "tag": "concept"}, {"id": "c9_34", "num": 34, "q": "Which subatomic particles are located inside the nucleus?", "a": "Protons and neutrons", "tag": "concept"}, {"id": "c9_35", "num": 35, "q": "The distribution of electrons among various shells is called the electronic _____.", "a": "Configuration", "tag": "fib"}, {"id": "c9_36", "num": 36, "q": "What is the chemical formula for Magnesium Oxide?", "a": "$MgO$", "tag": "formula"}, {"id": "c9_37", "num": 37, "q": "What is the chemical formula for Sodium Oxide?", "a": "$Na_{2}O$", "tag": "formula"}, {"id": "c9_38", "num": 38, "q": "What is the chemical formula for Aluminium Nitrate?", "a": "$Al(NO_{3})_{3}$", "tag": "formula"}, {"id": "c9_39", "num": 39, "q": "How many electrons are in the outermost shell of an atom with atomic number 17 (Chlorine)?", "a": "7", "tag": "concept"}, {"id": "c9_40", "num": 40, "q": "An atom that loses one electron forms an ion with a charge of _____.", "a": "$+1$", "tag": "fib"}, {"id": "c9_41", "num": 41, "q": "Why do noble gases like Helium and Argon have zero valency?", "a": "They have stable, complete outermost shells.", "tag": "formula"}, {"id": "c9_42", "num": 42, "q": "In an ionic compound, the total positive charge must _____ the total negative charge.", "a": "Equal", "tag": "fib"}, {"id": "c9_43", "num": 43, "q": "What is the molecular mass of Nitric Acid ($HNO_{3}$) if $H=1, N=14, O=16$?", "a": "$63\\ u$", "tag": "formula"}, {"id": "c9_44", "num": 44, "q": "Formula: Formula unit mass of $NaCl$ ($Na=23\\ u, Cl=35.5\\ u$)", "a": "$58.5\\ u$", "tag": "formula"}, {"id": "c9_45", "num": 45, "q": "Which subatomic particle has a mass that is considered negligible compared to protons?", "a": "Electron", "tag": "concept"}, {"id": "c9_46", "num": 46, "q": "Concept: $Z$", "a": "Definition: Symbol representing the Atomic Number of an element.", "tag": "concept"}, {"id": "c9_47", "num": 47, "q": "Concept: $A$", "a": "Definition: Symbol representing the Mass Number of an element.", "tag": "concept"}, {"id": "c9_48", "num": 48, "q": "According to modern theory, electrons exist as _____ around the nucleus rather than in fixed paths.", "a": "Electron clouds", "tag": "fib"}, {"id": "c9_49", "num": 49, "q": "Which instrument can produce images of materials with atomic-level details?", "a": "Electron microscope (STM or TEM)", "tag": "concept"}, {"id": "c9_50", "num": 50, "q": "What is the valency of the Phosphate ion ($PO_{4}^{3-}$)?", "a": "3", "tag": "formula"}, {"id": "c9_51", "num": 51, "q": "What is the valency of the Sulfate ion ($SO_{4}^{2-}$)?", "a": "2", "tag": "formula"}, {"id": "c9_52", "num": 52, "q": "What is the valency of the Ammonium ion ($NH_{4}^{+}$)?", "a": "1", "tag": "formula"}, {"id": "c9_53", "num": 53, "q": "The particles that make up cathode rays are _____.", "a": "Electrons", "tag": "fib"}, {"id": "c9_54", "num": 54, "q": "Which scientist's model is often compared to a 'plum pudding'?", "a": "J. J. Thomson", "tag": "concept"}, {"id": "c9_55", "num": 55, "q": "What is the charge of an alpha ($\\alpha$) particle?", "a": "Positive ($+2$)", "tag": "formula"}, {"id": "c9_56", "num": 56, "q": "In Rutherford's experiment, why did most alpha particles pass straight through the gold foil?", "a": "Most of the atom is empty space.", "tag": "concept"}, {"id": "c9_57", "num": 57, "q": "Atoms of different elements have _____ masses and chemical properties.", "a": "Different", "tag": "fib"}, {"id": "c9_58", "num": 58, "q": "Which element has the atomic number 1?", "a": "Hydrogen", "tag": "concept"}, {"id": "c9_59", "num": 59, "q": "How many protons are in an atom of Carbon ($Z=6$)?", "a": "6", "tag": "concept"}, {"id": "c9_60", "num": 60, "q": "If an atom has 11 protons and 12 neutrons, what is its mass number?", "a": "23", "tag": "concept"}, {"id": "c9_61", "num": 61, "q": "What is the valency of Carbon if it has 4 valence electrons?", "a": "4", "tag": "formula"}, {"id": "c9_62", "num": 62, "q": "The force that holds atoms together in a molecule is a _____ bond.", "a": "Chemical", "tag": "fib"}, {"id": "c9_63", "num": 63, "q": "Isotopes have the same atomic number but different _____ numbers.", "a": "Mass", "tag": "fib"}, {"id": "c9_64", "num": 64, "q": "The chemical formula of a/an _____ compound represents the simplest whole-number ratio of ions.", "a": "Ionic", "tag": "fib"}, {"id": "c9_65", "num": 65, "q": "What is the atomic mass of Nitrogen?", "a": "$14\\ u$", "tag": "formula"}, {"id": "c9_66", "num": 66, "q": "What is the atomic mass of Oxygen?", "a": "$16\\ u$", "tag": "formula"}, {"id": "c9_67", "num": 67, "q": "What is the atomic mass of Calcium?", "a": "$40\\ u$", "tag": "formula"}, {"id": "c9_68", "num": 68, "q": "The number of electrons in the K shell can be at most _____.", "a": "2", "tag": "fib"}, {"id": "c9_69", "num": 69, "q": "If an atom has an atomic number of 10, how many electrons are in its L shell?", "a": "8", "tag": "concept"}, {"id": "c9_70", "num": 70, "q": "Which subatomic particle’s discovery disproved Dalton's postulate that atoms are indivisible?", "a": "Electron", "tag": "concept"}, {"id": "c9_71", "num": 71, "q": "Concept: Polyatomic ion", "a": "Definition: A cluster of atoms that behaves as a single unit with a charge.", "tag": "concept"}, {"id": "c9_72", "num": 72, "q": "What is the formula unit mass of Sodium Oxide ($Na_{2}O$) if $Na=23$ and $O=16$?", "a": "$62\\ u$", "tag": "formula"}, {"id": "c9_73", "num": 73, "q": "Which element has atomic number 18 and a mass number of 40?", "a": "Argon", "tag": "concept"}, {"id": "c9_74", "num": 74, "q": "Atoms that gain electrons become _____ charged ions.", "a": "Negatively", "tag": "fib"}, {"id": "c9_75", "num": 75, "q": "The total number of _____ in an atom is equal to its atomic number.", "a": "Protons", "tag": "fib"}, {"id": "c9_76", "num": 76, "q": "What is the electronic configuration of Magnesium ($Z=12$)?", "a": "2, 8, 2", "tag": "formula"}, {"id": "c9_77", "num": 77, "q": "What is the valency of the Hydroxide ion ($OH^{-}$)?", "a": "1", "tag": "formula"}, {"id": "c9_78", "num": 78, "q": "What is the formula for Aluminium Oxide?", "a": "$Al_{2}O_{3}$", "tag": "formula"}, {"id": "c9_79", "num": 79, "q": "Which postulate of Dalton explains the Law of Conservation of Mass?", "a": "Atoms cannot be created or destroyed in chemical reactions.", "tag": "concept"}, {"id": "c9_80", "num": 80, "q": "In an atom, the number of electrons is _____ to the number of protons.", "a": "Equal", "tag": "fib"}], "10": [{"id": "c10_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c10_2", "num": 2, "q": "What is the physical cause of sound production?", "a": "Vibrating objects.", "tag": "concept"}, {"id": "c10_3", "num": 3, "q": "Sound is classified as what type of mechanical wave?", "a": "Longitudinal wave.", "tag": "concept"}, {"id": "c10_4", "num": 4, "q": "Why does sound require a medium (solid, liquid, or gas) to travel?", "a": "It is a mechanical wave.", "tag": "concept"}, {"id": "c10_5", "num": 5, "q": "In sound propagation, what travels through the medium instead of particles?", "a": "The density disturbance (energy).", "tag": "concept"}, {"id": "c10_6", "num": 6, "q": "How do particles of a medium move as a sound wave passes?", "a": "They vibrate about their mean positions.", "tag": "concept"}, {"id": "c10_7", "num": 7, "q": "What is the distance between two consecutive crests or troughs called?", "a": "Wavelength ($ \\lambda $).", "tag": "formula"}, {"id": "c10_8", "num": 8, "q": "What is the SI unit of wavelength?", "a": "Metre ($ m $).", "tag": "formula"}, {"id": "c10_9", "num": 9, "q": "Which term describes the number of density oscillations per unit time?", "a": "Frequency ($ \\nu $).", "tag": "formula"}, {"id": "c10_10", "num": 10, "q": "What is the SI unit of frequency?", "a": "Hertz ($ Hz $).", "tag": "formula"}, {"id": "c10_11", "num": 11, "q": "Define the time period ($ T $) of a sound wave.", "a": "Time taken for one complete density oscillation.", "tag": "concept"}, {"id": "c10_12", "num": 12, "q": "What is the SI unit for the time period of a wave?", "a": "Second ($ s $).", "tag": "formula"}, {"id": "c10_13", "num": 13, "q": "What is the mathematical relationship between frequency ($ \\nu $) and time period ($ T $)?", "a": "$ \\nu = \\frac{1}{T} $", "tag": "formula"}, {"id": "c10_14", "num": 14, "q": "The maximum change in medium density from the average is called _____.", "a": "Amplitude", "tag": "fib"}, {"id": "c10_15", "num": 15, "q": "Formula: Speed of sound ($ v $) in terms of wavelength ($ \\lambda $) and frequency ($ \\nu $).", "a": "$ v = \\lambda \\nu $", "tag": "formula"}, {"id": "c10_16", "num": 16, "q": "In which state of matter does sound generally travel the fastest?", "a": "Solids.", "tag": "concept"}, {"id": "c10_17", "num": 17, "q": "In which state of matter does sound generally travel the slowest?", "a": "Gases.", "tag": "concept"}, {"id": "c10_18", "num": 18, "q": "Approximately how much faster does sound travel in solids than in air?", "a": "$ 15\\text{--}20 $ times faster.", "tag": "formula"}, {"id": "c10_19", "num": 19, "q": "How does human perception describe the frequency of a sound?", "a": "Pitch.", "tag": "concept"}, {"id": "c10_20", "num": 20, "q": "High pitch sounds are characterized by having a _____ frequency.", "a": "higher", "tag": "fib"}, {"id": "c10_21", "num": 21, "q": "How is the amplitude of a sound wave perceived by humans?", "a": "Loudness.", "tag": "concept"}, {"id": "c10_22", "num": 22, "q": "What is the common unit for measuring sound loudness?", "a": "Decibels ($ dB $).", "tag": "formula"}, {"id": "c10_23", "num": 23, "q": "Define the intensity of sound.", "a": "Sound energy passing through unit area per unit time.", "tag": "concept"}, {"id": "c10_24", "num": 24, "q": "What is the difference between loudness and intensity?", "a": "Intensity is measurable; loudness is a subjective perception.", "tag": "concept"}, {"id": "c10_25", "num": 25, "q": "What term refers to unwanted or harmful sound?", "a": "Noise.", "tag": "concept"}, {"id": "c10_26", "num": 26, "q": "Which device converts sound energy into electrical signals?", "a": "Microphone.", "tag": "concept"}, {"id": "c10_27", "num": 27, "q": "Which device converts electrical signals into sound energy?", "a": "Speaker.", "tag": "concept"}, {"id": "c10_28", "num": 28, "q": "What is the name of the thin vibrating membrane in a microphone?", "a": "Diaphragm.", "tag": "concept"}, {"id": "c10_29", "num": 29, "q": "The bouncing of sound waves off obstacles is called _____.", "a": "reflection of sound", "tag": "fib"}, {"id": "c10_30", "num": 30, "q": "What is the typical audible frequency range for humans?", "a": "$ 20\\text{ Hz} $ to $ 20\\text{ kHz} $.", "tag": "formula"}, {"id": "c10_31", "num": 31, "q": "Sound waves with frequencies below $ 20\\text{ Hz} $ are called _____.", "a": "infrasonic waves", "tag": "fib"}, {"id": "c10_32", "num": 32, "q": "Sound waves with frequencies above $ 20\\text{ kHz} $ are called _____.", "a": "ultrasonic waves", "tag": "fib"}, {"id": "c10_33", "num": 33, "q": "Which type of wave is used to detect earthquakes and volcanic eruptions?", "a": "Infrasonic waves.", "tag": "concept"}, {"id": "c10_34", "num": 34, "q": "What medical technique uses ultrasonic waves to image internal organs?", "a": "Ultrasonography.", "tag": "concept"}, {"id": "c10_35", "num": 35, "q": "How are ultrasonic waves used in the treatment of kidney stones?", "a": "Breaking stones into smaller pieces.", "tag": "concept"}, {"id": "c10_36", "num": 36, "q": "The ability to locate objects using reflected sound waves is called _____.", "a": "echolocation", "tag": "fib"}, {"id": "c10_37", "num": 37, "q": "Which nocturnal mammal uses echolocation to find prey in the dark?", "a": "Bats.", "tag": "concept"}, {"id": "c10_38", "num": 38, "q": "What does the acronym SONAR stand for?", "a": "Sound Navigation and Ranging.", "tag": "concept"}, {"id": "c10_39", "num": 39, "q": "How does SONAR measure the distance of underwater objects?", "a": "By analyzing the reflection of ultrasonic waves.", "tag": "concept"}, {"id": "c10_40", "num": 40, "q": "In a SONAR calculation, why is the total travel time divided by two to find distance?", "a": "The signal travels to the object and back.", "tag": "concept"}, {"id": "c10_41", "num": 41, "q": "What part of the human ear vibrates first when sound enters?", "a": "Eardrum.", "tag": "concept"}, {"id": "c10_42", "num": 42, "q": "Which part of the ear converts amplified vibrations into electrical signals?", "a": "Cochlea.", "tag": "concept"}, {"id": "c10_43", "num": 43, "q": "In a graphical representation, what does a 'crest' represent for a sound wave?", "a": "A region of maximum density (compression).", "tag": "concept"}, {"id": "c10_44", "num": 44, "q": "In a graphical representation, what does a 'trough' represent for a sound wave?", "a": "A region of minimum density (rarefaction).", "tag": "concept"}, {"id": "c10_45", "num": 45, "q": "Why is lightning seen before thunder is heard?", "a": "Light travels significantly faster than sound.", "tag": "concept"}, {"id": "c10_46", "num": 46, "q": "What is the purpose of a hearing aid?", "a": "To amplify sound for individuals with hearing loss.", "tag": "concept"}, {"id": "c10_47", "num": 47, "q": "In Activity 10.1, what is necessary for the rubber band to produce sound?", "a": "It must be vibrating.", "tag": "concept"}, {"id": "c10_48", "num": 48, "q": "The subjective perception of sound amplitude is known as _____.", "a": "loudness", "tag": "fib"}, {"id": "c10_49", "num": 49, "q": "What is the speed of sound used in the textbook's thunderstorm example?", "a": "$ 340\\text{ m s}^{-1} $.", "tag": "formula"}, {"id": "c10_50", "num": 50, "q": "How can nearly single-frequency sounds be produced orally?", "a": "Whistling.", "tag": "concept"}], "11": [{"id": "c11_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c11_2", "num": 2, "q": "What is the biological process by which living beings produce new individuals of their own kind?", "a": "Reproduction.", "tag": "concept"}, {"id": "c11_3", "num": 3, "q": "Which type of reproduction involves a single parent producing offspring that are exact copies?", "a": "Asexual reproduction.", "tag": "concept"}, {"id": "c11_4", "num": 4, "q": "Which type of reproduction involves two parents contributing genetic material to the offspring?", "a": "Sexual reproduction.", "tag": "concept"}, {"id": "c11_5", "num": 5, "q": "What is the primary benefit of the mixing of characteristics in sexual reproduction?", "a": "Helps organisms adapt to changing environments.", "tag": "concept"}, {"id": "c11_6", "num": 6, "q": "Which special type of cell division solves the problem of chromosome doubling in sexual reproduction?", "a": "Meiosis.", "tag": "concept"}, {"id": "c11_7", "num": 7, "q": "In a flower, which part represents the male reproductive organ?", "a": "Stamen.", "tag": "concept"}, {"id": "c11_8", "num": 8, "q": "In a flower, which part represents the female reproductive organ?", "a": "Pistil.", "tag": "concept"}, {"id": "c11_9", "num": 9, "q": "What is the process of transferring pollen from the anther to the stigma?", "a": "Pollination.", "tag": "concept"}, {"id": "c11_10", "num": 10, "q": "Following fertilisation in plants, what does the ovule develop into?", "a": "Seed.", "tag": "concept"}, {"id": "c11_11", "num": 11, "q": "Following fertilisation in plants, what does the ovary develop into?", "a": "Fruit.", "tag": "concept"}, {"id": "c11_12", "num": 12, "q": "What is the function of the scrotum in the male reproductive system?", "a": "Keeps testes cooler than body temperature for sperm formation.", "tag": "concept"}, {"id": "c11_13", "num": 13, "q": "Where are sperm produced in the human male reproductive system?", "a": "Testes.", "tag": "concept"}, {"id": "c11_14", "num": 14, "q": "Which tube carries sperm from the testes to the urethra?", "a": "Vas deferens.", "tag": "concept"}, {"id": "c11_15", "num": 15, "q": "Which organ serves as a common passage for both urine and sperm in males?", "a": "Urethra.", "tag": "concept"}, {"id": "c11_16", "num": 16, "q": "What is the role of the seminal vesicles and the prostate gland?", "a": "Add fluids to nourish and help sperm move.", "tag": "concept"}, {"id": "c11_17", "num": 17, "q": "What part of the sperm contains the genetic material?", "a": "The head.", "tag": "concept"}, {"id": "c11_18", "num": 18, "q": "Which organs in the female reproductive system produce eggs and hormones?", "a": "Ovaries.", "tag": "concept"}, {"id": "c11_19", "num": 19, "q": "Where does a foetus typically develop within the female body?", "a": "Uterus.", "tag": "concept"}, {"id": "c11_20", "num": 20, "q": "Which tubes connect each ovary to the uterus?", "a": "Oviducts (Fallopian tubes).", "tag": "concept"}, {"id": "c11_21", "num": 21, "q": "What is the narrow passage through which the uterus opens into the vagina?", "a": "Cervix.", "tag": "concept"}, {"id": "c11_22", "num": 22, "q": "The process of the formation of gametes is known as _____.", "a": "Gametogenesis.", "tag": "fib"}, {"id": "c11_23", "num": 23, "q": "How many chromosomes are present in human somatic (body) cells?", "a": "$46$.", "tag": "formula"}, {"id": "c11_24", "num": 24, "q": "How many chromosomes are present in a human sperm or egg cell?", "a": "$23$.", "tag": "formula"}, {"id": "c11_25", "num": 25, "q": "Why is it important for gametes to have only half the number of chromosomes?", "a": "To ensure the zygote has the correct chromosome number.", "tag": "concept"}, {"id": "c11_26", "num": 26, "q": "Which gamete is typically actively motile and produced in millions?", "a": "Sperm.", "tag": "concept"}, {"id": "c11_27", "num": 27, "q": "What is the term for the monthly release of a mature egg from an ovary?", "a": "Ovulation.", "tag": "concept"}, {"id": "c11_28", "num": 28, "q": "Around which day of the menstrual cycle does ovulation typically take place?", "a": "Day $14$.", "tag": "formula"}, {"id": "c11_29", "num": 29, "q": "What structure is formed when a sperm successfully fuses with an egg?", "a": "Zygote.", "tag": "concept"}, {"id": "c11_30", "num": 30, "q": "What process marks the beginning of pregnancy when the zygote attaches to the uterus?", "a": "Implantation.", "tag": "concept"}, {"id": "c11_31", "num": 31, "q": "What does IVF stand for in reproductive medicine?", "a": "In-vitro Fertilisation.", "tag": "concept"}, {"id": "c11_32", "num": 32, "q": "Who was the Indian scientist that pioneered the birth of India's first test tube baby?", "a": "Subhash Mukhopadhyay.", "tag": "concept"}, {"id": "c11_33", "num": 33, "q": "What was the nickname given to Kanupriya Agarwal, India's first IVF baby?", "a": "Durga.", "tag": "concept"}, {"id": "c11_34", "num": 34, "q": "What is the term for the anxiety and fatigue some mothers experience after delivery?", "a": "Post-partum depression.", "tag": "concept"}, {"id": "c11_35", "num": 35, "q": "What is the difference between sexual maturity and emotional maturity?", "a": "Biological capability to reproduce versus handling feelings and decisions.", "tag": "concept"}, {"id": "c11_36", "num": 36, "q": "Which birth control method is a mechanical barrier that also helps prevent STIs?", "a": "Condom.", "tag": "concept"}, {"id": "c11_37", "num": 37, "q": "What does IUD stand for in the context of birth control?", "a": "Intra-Uterine Device.", "tag": "concept"}, {"id": "c11_38", "num": 38, "q": "Which specific IUD is mentioned as a common birth control method?", "a": "Copper-T.", "tag": "concept"}, {"id": "c11_39", "num": 39, "q": "Where was the world's first non-steroidal oral contraceptive pill developed?", "a": "Central Drug Research Institute (CDRI), Lucknow.", "tag": "concept"}, {"id": "c11_40", "num": 40, "q": "How often is the non-steroidal contraceptive pill developed by Indian scientists taken?", "a": "Once weekly.", "tag": "concept"}, {"id": "c11_41", "num": 41, "q": "Why is the Indian-developed oral contraceptive pill considered safer than traditional pills?", "a": "It is non-steroidal and non-hormonal, avoiding most side effects.", "tag": "concept"}, {"id": "c11_42", "num": 42, "q": "During which process does the zygote undergo divisions while traveling to the uterus?", "a": "Mitotic divisions.", "tag": "concept"}, {"id": "c11_43", "num": 43, "q": "Approximately how long does a human pregnancy last?", "a": "Nine months.", "tag": "concept"}, {"id": "c11_44", "num": 44, "q": "Why do simple organisms like yeast and hydra mainly reproduce asexually?", "a": "It allows rapid reproduction without needing a partner.", "tag": "concept"}, {"id": "c11_45", "num": 45, "q": "Which plant part connects the stigma to the ovary?", "a": "The style (part of the pistil).", "tag": "concept"}, {"id": "c11_46", "num": 46, "q": "The _____ is a bag-like structure where the foetus grows and receives nourishment.", "a": "Uterus", "tag": "fib"}, {"id": "c11_47", "num": 47, "q": "What is the main function of hormones released by the ovaries?", "a": "Bring about physical changes during puberty and regulate cycles.", "tag": "concept"}, {"id": "c11_48", "num": 48, "q": "In humans, where does fertilisation typically occur?", "a": "In the oviduct (Fallopian tube).", "tag": "concept"}, {"id": "c11_49", "num": 49, "q": "Why are sperm produced in millions while usually only one egg is released?", "a": "To increase the chances of a sperm reaching the egg.", "tag": "concept"}, {"id": "c11_50", "num": 50, "q": "Which biological stage of life spans Grades 9 to 12 and involves intellectual growth?", "a": "Adolescent stage.", "tag": "concept"}], "12": [{"id": "c12_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c12_2", "num": 2, "q": "What is the scientific system of grouping living organisms called?", "a": "Biological classification.", "tag": "concept"}, {"id": "c12_3", "num": 3, "q": "Which major cell characteristic distinguishes Monera from other kingdoms?", "a": "Prokaryotic cell type (no true nucleus).", "tag": "concept"}, {"id": "c12_4", "num": 4, "q": "What is the primary material in fungal cell walls?", "a": "Chitin.", "tag": "concept"}, {"id": "c12_5", "num": 5, "q": "Organisms that make their own food through photosynthesis are called _____.", "a": "Autotrophs.", "tag": "fib"}, {"id": "c12_6", "num": 6, "q": "What are the five kingdoms proposed by Robert Whittaker?", "a": "Monera, Protista, Fungi, Plantae, and Animalia.", "tag": "concept"}, {"id": "c12_7", "num": 7, "q": "What is the rigid material found in plant cell walls?", "a": "Cellulose.", "tag": "concept"}, {"id": "c12_8", "num": 8, "q": "Organisms that obtain nutrients from dead or decaying matter are called _____.", "a": "Saprophytes.", "tag": "fib"}, {"id": "c12_9", "num": 9, "q": "What is the network of fine filaments in fungi called?", "a": "Mycelium.", "tag": "concept"}, {"id": "c12_10", "num": 10, "q": "Which kingdom consists of unicellular eukaryotes?", "a": "Kingdom Protista.", "tag": "concept"}, {"id": "c12_11", "num": 11, "q": "In biological hierarchy, which rank comes immediately after Kingdom?", "a": "Phylum.", "tag": "concept"}, {"id": "c12_12", "num": 12, "q": "What are the two parts of a scientific name?", "a": "Genus and species.", "tag": "concept"}, {"id": "c12_13", "num": 13, "q": "How should a scientific name be formatted when printed?", "a": "In italics.", "tag": "concept"}, {"id": "c12_14", "num": 14, "q": "Which part of the scientific name begins with a capital letter?", "a": "The genus name.", "tag": "concept"}, {"id": "c12_15", "num": 15, "q": "Who proposed the three-domain system of classification in 1977?", "a": "Carl Woese.", "tag": "concept"}, {"id": "c12_16", "num": 16, "q": "The three-domain system is primarily based on comparing which molecule?", "a": "$DNA$.", "tag": "formula"}, {"id": "c12_17", "num": 17, "q": "What is the most specific level in the classification hierarchy?", "a": "Species.", "tag": "concept"}, {"id": "c12_18", "num": 18, "q": "Which ancient Indian tradition involves protecting locally diverse habitats?", "a": "Sacred groves.", "tag": "concept"}, {"id": "c12_19", "num": 19, "q": "What is the Sangam Tinai classification used for?", "a": "Classifying landscapes and their biota in ancient India.", "tag": "concept"}, {"id": "c12_20", "num": 20, "q": "Which 17th-century book describes Indian plants and their medicinal uses?", "a": "Hortus Malabaricus.", "tag": "concept"}, {"id": "c12_21", "num": 21, "q": "Who was the Indian herbalist who helped compile Hortus Malabaricus?", "a": "Itty Achudan.", "tag": "concept"}, {"id": "c12_22", "num": 22, "q": "Why is diversity important in agriculture?", "a": "Reduces risk of crop failure and strengthens food security.", "tag": "concept"}, {"id": "c12_23", "num": 23, "q": "What is the ecological role of fungi and many protists?", "a": "Decomposers.", "tag": "concept"}, {"id": "c12_24", "num": 24, "q": "Organisms that depend on others for food are called _____.", "a": "Heterotrophs.", "tag": "fib"}, {"id": "c12_25", "num": 25, "q": "List the full classification hierarchy from broadest to most specific.", "a": "Kingdom, Phylum, Class, Order, Family, Genus, Species.", "tag": "concept"}, {"id": "c12_26", "num": 26, "q": "Which feature confirms an animal is an insect rather than an earthworm?", "a": "Body with jointed legs.", "tag": "concept"}, {"id": "c12_27", "num": 27, "q": "What do similar features in different organisms suggest about their origin?", "a": "Common ancestry.", "tag": "concept"}, {"id": "c12_28", "num": 28, "q": "Which kingdom includes multicellular, heterotrophic eukaryotes without cell walls?", "a": "Kingdom Animalia.", "tag": "concept"}, {"id": "c12_29", "num": 29, "q": "Into how many classes is Kingdom Plantae further divided?", "a": "Five classes.", "tag": "concept"}, {"id": "c12_30", "num": 30, "q": "What are the five classes of Kingdom Plantae?", "a": "Thallophyta, Bryophyta, Pteridophyta, Gymnosperms, and Angiosperms.", "tag": "concept"}, {"id": "c12_31", "num": 31, "q": "Which group contains microscopic organisms without a true nucleus?", "a": "Kingdom Monera.", "tag": "concept"}, {"id": "c12_32", "num": 32, "q": "What is the function of contractile vacuoles in protists?", "a": "Osmoregulation and waste removal.", "tag": "concept"}, {"id": "c12_33", "num": 33, "q": "How do many fungi reproduce?", "a": "Forming spores.", "tag": "concept"}, {"id": "c12_34", "num": 34, "q": "Which kingdom acts as a vital link in aquatic food chains?", "a": "Kingdom Protista.", "tag": "concept"}, {"id": "c12_35", "num": 35, "q": "Classification helps identify organisms under threat of _____.", "a": "Extinction.", "tag": "fib"}, {"id": "c12_36", "num": 36, "q": "What does a membrane-bound nucleus distinguish?", "a": "Eukaryotes from prokaryotes.", "tag": "concept"}, {"id": "c12_37", "num": 37, "q": "Which type of nutrition involves absorbing nutrients from dead organic matter?", "a": "Saprophytic nutrition.", "tag": "concept"}, {"id": "c12_38", "num": 38, "q": "What happens to the number of common features as we move down the hierarchy?", "a": "They increase.", "tag": "concept"}, {"id": "c12_39", "num": 39, "q": "Organism Q is multicellular with no chlorophyll and grows on dead matter. Identify its kingdom.", "a": "Kingdom Fungi.", "tag": "concept"}, {"id": "c12_40", "num": 40, "q": "Why are scientific names written in Latin or Greek-like scripts?", "a": "To ensure clear, unambiguous global communication.", "tag": "concept"}, {"id": "c12_41", "num": 41, "q": "What are organisms called if they consist of only one cell?", "a": "Unicellular.", "tag": "concept"}, {"id": "c12_42", "num": 42, "q": "What is the primary ecological role of plants?", "a": "Producers.", "tag": "concept"}, {"id": "c12_43", "num": 43, "q": "What is the term for a symbiotic relationship where both organisms benefit?", "a": "Mutualism.", "tag": "concept"}, {"id": "c12_44", "num": 44, "q": "Which kingdom includes organisms like yeast and mushrooms?", "a": "Kingdom Fungi.", "tag": "concept"}, {"id": "c12_45", "num": 45, "q": "Kingdom Monera members survive in which extreme environments?", "a": "High salinity and high temperatures.", "tag": "concept"}, {"id": "c12_46", "num": 46, "q": "What describes 'acellular' entities in the text?", "a": "Inactive outside a host cell (Viruses).", "tag": "concept"}, {"id": "c12_47", "num": 47, "q": "What is the purpose of the magnifying glass symbol on the textbook pages?", "a": "Symbolises careful observation.", "tag": "formula"}, {"id": "c12_48", "num": 48, "q": "What does the compass symbol represent in scientific exploration?", "a": "Direction, appropriate models, and limits of ideas.", "tag": "formula"}, {"id": "c12_49", "num": 49, "q": "According to NCF-SE 2023, what should science education develop?", "a": "Scientific temper, critical thinking, and problem-solving skills.", "tag": "concept"}, {"id": "c12_50", "num": 50, "q": "What is the role of technology in this textbook?", "a": "Provides extra resources through QR codes.", "tag": "concept"}], "13": [{"id": "c13_1", "num": 1, "q": "Do you know who prepared these flashcards for you?", "a": "Yes, Rishi Sir.", "tag": "special"}, {"id": "c13_2", "num": 2, "q": "What constitutes the 'Geosphere' in the Earth system?", "a": "Solid rocks, soil, landforms, and the Earth's interior.", "tag": "concept"}, {"id": "c13_3", "num": 3, "q": "The liquid water in oceans, rivers, and groundwater belongs to the _____.", "a": "Hydrosphere", "tag": "fib"}, {"id": "c13_4", "num": 4, "q": "Which sphere of Earth includes ice, snow, and glaciers?", "a": "Cryosphere", "tag": "concept"}, {"id": "c13_5", "num": 5, "q": "The _____ comprises all living organisms and their habitats.", "a": "Biosphere", "tag": "fib"}, {"id": "c13_6", "num": 6, "q": "What is the primary source of energy for life on Earth?", "a": "The Sun.", "tag": "concept"}, {"id": "c13_7", "num": 7, "q": "What is the percentage of Nitrogen in Earth's atmosphere?", "a": "$78\\%$", "tag": "formula"}, {"id": "c13_8", "num": 8, "q": "Oxygen makes up approximately _____ of the atmosphere's volume.", "a": "$21\\%$", "tag": "fib"}, {"id": "c13_9", "num": 9, "q": "Which atmospheric layer contains most weather processes like evaporation?", "a": "Troposphere", "tag": "concept"}, {"id": "c13_10", "num": 10, "q": "The force of _____ holds the atmosphere in place.", "a": "Earth's gravity", "tag": "fib"}, {"id": "c13_11", "num": 11, "q": "Concept: Solar Constant", "a": "Definition: Solar radiation received per unit area outside the atmosphere.", "tag": "concept"}, {"id": "c13_12", "num": 12, "q": "What is the maximum insolation reaching Earth's surface under clear skies?", "a": "Approximately $1 \\text{ kWm}^{-2}$.", "tag": "formula"}, {"id": "c13_13", "num": 13, "q": "Why is solar insolation highly significant for India's climate?", "a": "It drives the southwest monsoon.", "tag": "concept"}, {"id": "c13_14", "num": 14, "q": "What causes the generation of global winds and ocean currents?", "a": "Uneven heating of the Earth's surface.", "tag": "concept"}, {"id": "c13_15", "num": 15, "q": "The process of recycling essential nutrients between biotic and abiotic components is called _____.", "a": "Biogeochemical cycles", "tag": "fib"}, {"id": "c13_16", "num": 16, "q": "Through which biological process is atmospheric oxygen primarily restored?", "a": "Photosynthesis", "tag": "concept"}, {"id": "c13_17", "num": 17, "q": "Which element forms the backbone of proteins, carbohydrates, and DNA?", "a": "Carbon", "tag": "concept"}, {"id": "c13_18", "num": 18, "q": "How do human activities affect the concentration of greenhouse gases?", "a": "They increase it, leading to global warming.", "tag": "concept"}, {"id": "c13_19", "num": 19, "q": "What is the thickness of a typical cell membrane?", "a": "$7$ to $10 \\text{ nanometres (nm)}$.", "tag": "formula"}, {"id": "c13_20", "num": 20, "q": "Which organelle is famously known as the 'powerhouse of the cell'?", "a": "Mitochondria", "tag": "concept"}, {"id": "c13_21", "num": 21, "q": "Mitochondria supply energy required for cellular activities in the form of _____.", "a": "Energy (ATP)", "tag": "fib"}, {"id": "c13_22", "num": 22, "q": "A tissue that connects and supports other tissues is called _____.", "a": "Connective tissue", "tag": "fib"}, {"id": "c13_23", "num": 23, "q": "Why is the matrix of bone different from the matrix of blood?", "a": "Bone matrix is solid; blood matrix is fluid.", "tag": "concept"}, {"id": "c13_24", "num": 24, "q": "What are the four main components of blood?", "a": "Plasma, RBCs, WBCs, and platelets.", "tag": "concept"}, {"id": "c13_25", "num": 25, "q": "Formula: Gravitational Potential Energy ($U$)", "a": "$U = mgh$", "tag": "formula"}, {"id": "c13_26", "num": 26, "q": "The energy possessed by an object due to its motion is _____.", "a": "Kinetic energy", "tag": "fib"}, {"id": "c13_27", "num": 27, "q": "What is the SI unit for both work and energy?", "a": "Joule ($J$)", "tag": "formula"}, {"id": "c13_28", "num": 28, "q": "Concept: Work-Energy Theorem", "a": "Definition: Work done equals the change in an object's energy.", "tag": "concept"}, {"id": "c13_29", "num": 29, "q": "_____ is defined as the rate at which work is done.", "a": "Power", "tag": "fib"}, {"id": "c13_30", "num": 30, "q": "What is the purpose of simple machines?", "a": "To make work easier by changing force or direction.", "tag": "concept"}, {"id": "c13_31", "num": 31, "q": "Which scientist linked star color to temperature using gas models?", "a": "Meghnad Saha", "tag": "concept"}, {"id": "c13_32", "num": 32, "q": "How much solar energy is received by $1 \\text{ m}^2$ in one hour at $1 \\text{ kWm}^{-2}$?", "a": "$3.6 \\times 10^6 \\text{ J}$", "tag": "formula"}, {"id": "c13_33", "num": 33, "q": "The expansion of the Universe is accelerating due to _____.", "a": "Dark energy", "tag": "fib"}, {"id": "c13_34", "num": 34, "q": "Which type of epithelial tissue lines blood vessels and lungs?", "a": "Simple squamous epithelium", "tag": "concept"}, {"id": "c13_35", "num": 35, "q": "What is the function of columnar epithelium in the small intestine?", "a": "Efficient uptake of nutrients (Absorption).", "tag": "concept"}, {"id": "c13_36", "num": 36, "q": "Which tissue type is specialized for producing and releasing mucus or enzymes?", "a": "Glandular epithelium", "tag": "concept"}, {"id": "c13_37", "num": 37, "q": "In the cell membrane, the 'water attracting' parts of lipid molecules are called _____.", "a": "Heads", "tag": "fib"}, {"id": "c13_38", "num": 38, "q": "Which enzymes in human sperm help break down the egg's outer layer?", "a": "Lysosomal enzymes", "tag": "concept"}, {"id": "c13_39", "num": 39, "q": "What governs the flow of energy and matter besides the Sun?", "a": "Earth's hot interior and chemical reactions.", "tag": "concept"}, {"id": "c13_40", "num": 40, "q": "How does clearing a large forest affect a nearby river?", "a": "It increases runoff and decreases soil infiltration.", "tag": "concept"}, {"id": "c13_41", "num": 41, "q": "The cryosphere consists of the _____ form of water.", "a": "Solid", "tag": "fib"}, {"id": "c13_42", "num": 42, "q": "Atmospheric _____ is used in combustion and respiration.", "a": "Oxygen ($O_2$)", "tag": "fib"}, {"id": "c13_43", "num": 43, "q": "What creates pressure differences that drive global winds?", "a": "Uneven heating of the Earth's surface.", "tag": "concept"}, {"id": "c13_44", "num": 44, "q": "Which model explains the structure of the cell membrane?", "a": "Fluid-mosaic model", "tag": "concept"}, {"id": "c13_45", "num": 45, "q": "What happens to the potential energy of an object lifted to height $h$?", "a": "It increases by an amount equal to $mgh$.", "tag": "concept"}, {"id": "c13_46", "num": 46, "q": "Energy transferred through electric circuits or sound waves is a form of _____.", "a": "Energy transfer", "tag": "fib"}, {"id": "c13_47", "num": 47, "q": "Which atmospheric layer contains the ozone layer and aircraft paths?", "a": "Stratosphere", "tag": "concept"}, {"id": "c13_48", "num": 48, "q": "Formula: Solar Energy ($E$)", "a": "$E = \\text{Intensity} \\times \\text{area} \\times \\text{time}$", "tag": "formula"}, {"id": "c13_49", "num": 49, "q": "The transition of snow (cryosphere) into a lake (hydrosphere) is an example of _____.", "a": "Sphere interaction", "tag": "fib"}, {"id": "c13_50", "num": 50, "q": "What is the primary role of the atmosphere regarding Earth's temperature?", "a": "Maintaining a suitable temperature for life.", "tag": "concept"}]};
+
+  const KEY_STATS = 'gyanu_cbse9_fc_stats_v1';
+  const KEY_DARK = 'gyanu_cbse9_fc_dark_v1';
+  const KEY_NAME = 'gyanu_cbse9_student_name_v1';
+
+  let currentBranch = 'all';
+  let currentChapter = '1';
+  let currentTag = 'all';
+  let activeDeck = [];
+  let currentIndex = 0;
+  let isFlipped = false;
+  let isShuffled = false;
+  let soundOn = true;
+
+  let userStats = { xp: 0, streak: 0, mastered: {}, hard: {} };
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY_STATS) || 'null');
+    if (saved) userStats = Object.assign(userStats, saved);
+  } catch (e) {}
+
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  let audioCtx = null;
+
+  function playTone(type) {
+    if (!soundOn) return;
+    try {
+      if (!audioCtx) audioCtx = new AudioCtx();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      const now = audioCtx.currentTime;
+      if (type === 'flip') {
+        osc.frequency.setValueAtTime(420, now);
+        osc.frequency.exponentialRampToValueAtTime(580, now + 0.07);
+        gain.gain.setValueAtTime(0.06, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+      } else if (type === 'good') {
+        osc.frequency.setValueAtTime(523.25, now);
+        osc.frequency.setValueAtTime(659.25, now + 0.08);
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+      } else if (type === 'shuffle') {
+        osc.frequency.setValueAtTime(350, now);
+        osc.frequency.setValueAtTime(490, now + 0.05);
+        osc.frequency.setValueAtTime(620, now + 0.1);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+      } else {
+        osc.frequency.setValueAtTime(280, now);
+        osc.frequency.exponentialRampToValueAtTime(210, now + 0.12);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+      }
+      osc.start(now);
+      osc.stop(now + 0.24);
+    } catch (e) {}
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toastEl');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  function formatSciText(str) {
+    if (!str) return '';
+    return str.replace(/\$([^$]+)\$/g, (_, math) => {
+      let c = math.trim()
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 / $2)')
+        .replace(/\\times/g, '×')
+        .replace(/\\cdot/g, '·')
+        .replace(/\\lambda/g, 'λ')
+        .replace(/\\nu/g, 'ν')
+        .replace(/\\mu/g, 'μ')
+        .replace(/\\alpha/g, 'α')
+        .replace(/\\%/g, '%')
+        .replace(/\\ /g, ' ')
+        .replace(/_\{([^}]+)\}/g, '<sub>$1</sub>')
+        .replace(/_([0-9a-zA-Z]+)/g, '<sub>$1</sub>')
+        .replace(/\^\{([^}]+)\}/g, '<sup>$1</sup>')
+        .replace(/\^([0-9a-zA-Z+-]+)/g, '<sup>$1</sup>');
+      return `<span class="formula-pill">${c}</span>`;
+    });
+  }
+
+  function cleanSpeech(str) {
+    if (!str) return '';
+    return str.replace(/\$[^$]+\$/g, m => m.replace(/\$/g, '').replace(/\\text\{([^}]+)\}/g, '$1').replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '$1 divided by $2').replace(/\\[a-zA-Z]+/g, ' '))
+              .replace(/_____/g, 'blank');
+  }
+
+  function saveStats() {
+    try { localStorage.setItem(KEY_STATS, JSON.stringify(userStats)); } catch (e) {}
+  }
+
+  function initApp() {
+    if (localStorage.getItem(KEY_DARK) === 'true') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('themeBtn').innerHTML = '☀️ Light';
+    }
+    const savedName = localStorage.getItem(KEY_NAME);
+    if (savedName) {
+      document.getElementById('studentGreeting').textContent = `Welcome back, ${savedName}! Ready to conquer Science?`;
+    } else {
+      setTimeout(() => openNameModal(), 650);
+    }
+    populateChapters();
+    applyFilters();
+    setupGesturesAndKeys();
+  }
+
+  function openNameModal() {
+    document.getElementById('studentNameInput').value = localStorage.getItem(KEY_NAME) || '';
+    document.getElementById('nameModal').classList.add('open');
+  }
+
+  function closeNameModal() {
+    document.getElementById('nameModal').classList.remove('open');
+  }
+
+  function saveStudentName() {
+    const val = document.getElementById('studentNameInput').value.trim();
+    if (val) {
+      try { localStorage.setItem(KEY_NAME, val); } catch (e) {}
+      document.getElementById('studentGreeting').textContent = `Welcome back, ${val}! Ready to conquer Science?`;
+      showToast(`👋 Welcome, ${val}! Let's ace Class 9 Science!`);
+    }
+    closeNameModal();
+  }
+
+  function populateChapters() {
+    const sel = document.getElementById('chapterSelect');
+    const keys = Object.keys(chapterMeta).sort((a, b) => parseInt(a) - parseInt(b));
+    const filtered = keys.filter(k => currentBranch === 'all' || chapterMeta[k].branch === currentBranch);
+    sel.innerHTML = filtered.map(k => `<option value="${k}">${chapterMeta[k].title} (${chapterMeta[k].count} Cards)</option>`).join('');
+    if (!filtered.includes(String(currentChapter))) {
+      currentChapter = filtered[0] || '1';
+    }
+    sel.value = currentChapter;
+  }
+
+  function filterBranch(branch, btn) {
+    currentBranch = branch;
+    document.querySelectorAll('.branch-tabs .pill-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    populateChapters();
+    onChapterChange();
+  }
+
+  function onChapterChange() {
+    currentChapter = document.getElementById('chapterSelect').value;
+    isShuffled = false;
+    applyFilters();
+  }
+
+  function filterTag(tag, btn) {
+    currentTag = tag;
+    document.querySelectorAll('.tag-filters .pill-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const chCards = flashcardsDB[currentChapter] || [];
+    const q = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+
+    activeDeck = chCards.filter(c => {
+      const matchSearch = !q || c.q.toLowerCase().includes(q) || c.a.toLowerCase().includes(q);
+      if (!matchSearch) return false;
+      if (currentTag === 'all') return true;
+      if (currentTag === 'hard') return !!userStats.hard[c.id];
+      return c.tag === currentTag;
+    });
+
+    if (isShuffled) {
+      fisherYates(activeDeck);
+    }
+
+    currentIndex = 0;
+    isFlipped = false;
+    document.getElementById('flashcardEl').classList.remove('flipped');
+    updateHUD();
+    renderCard();
+  }
+
+  function fisherYates(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  function shuffleCurrentDeck() {
+    if (activeDeck.length <= 1) {
+      showToast('Need at least 2 cards to shuffle!');
+      return;
+    }
+    isShuffled = true;
+    fisherYates(activeDeck);
+    currentIndex = 0;
+    isFlipped = false;
+    document.getElementById('flashcardEl').classList.remove('flipped');
+    playTone('shuffle');
+    renderCard();
+    showToast(`🔀 Shuffled ${activeDeck.length} cards randomly!`);
+  }
+
+  function resetDeckOrder() {
+    isShuffled = false;
+    applyFilters();
+    showToast('↺ Restored original NCERT chapter order');
+  }
+
+  function updateHUD() {
+    const chCards = flashcardsDB[currentChapter] || [];
+    const chMastered = chCards.filter(c => userStats.mastered[c.id]).length;
+    const chHard = chCards.filter(c => userStats.hard[c.id]).length;
+    const pct = chCards.length ? Math.round((chMastered / chCards.length) * 100) : 0;
+
+    document.getElementById('xpVal').textContent = userStats.xp;
+    document.getElementById('streakVal').textContent = userStats.streak;
+    document.getElementById('masteredVal').textContent = `${chMastered} / ${chCards.length} (${pct}%)`;
+    document.getElementById('hardCount').textContent = chHard;
+    document.getElementById('masteryBar').style.width = pct + '%';
+  }
+
+  function renderCard() {
+    const clueBox = document.getElementById('clueBox');
+    clueBox.classList.remove('show');
+    clueBox.textContent = '';
+
+    if (activeDeck.length === 0) {
+      document.getElementById('deckCounter').textContent = '0 cards match this filter';
+      document.getElementById('cardNumBadge').textContent = 'Empty';
+      document.getElementById('cardTypeBadge').textContent = 'Filter';
+      document.getElementById('cardQuestion').innerHTML = 'No flashcards found for this filter.<br><small style="opacity:0.7;">Try selecting "✨ All Cards" or clearing your search.</small>';
+      document.getElementById('cardAnswer').innerHTML = '—';
+      return;
+    }
+
+    const card = activeDeck[currentIndex];
+    const tagLabels = {
+      special: '👑 Gyanu AI Special',
+      formula: '📐 Formula / SI Unit',
+      fib: '✍️ Fill in the Blank',
+      concept: '⭐ Concept & Definition'
+    };
+
+    const statusIcon = userStats.mastered[card.id] ? ' 🟢' : (userStats.hard[card.id] ? ' 🔴' : '');
+    document.getElementById('cardNumBadge').textContent = `Card #${card.num}${statusIcon}`;
+    document.getElementById('cardTypeBadge').textContent = tagLabels[card.tag] || '⭐ Concept';
+    document.getElementById('cardBackChBadge').textContent = chapterMeta[currentChapter].branchName;
+    document.getElementById('cardQuestion').innerHTML = formatSciText(card.q);
+    document.getElementById('cardAnswer').innerHTML = formatSciText(card.a);
+    document.getElementById('deckCounter').textContent = `Card ${currentIndex + 1} of ${activeDeck.length}${isShuffled ? ' (🔀 Shuffled)' : ''}`;
+  }
+
+  function flipCard() {
+    if (activeDeck.length === 0) return;
+    isFlipped = !isFlipped;
+    document.getElementById('flashcardEl').classList.toggle('flipped', isFlipped);
+    playTone('flip');
+  }
+
+  function showClue() {
+    if (activeDeck.length === 0) return;
+    const ans = activeDeck[currentIndex].a.replace(/\$/g, '').trim();
+    const words = ans.split(/\s+/);
+    let hint = '';
+    if (words.length === 1) {
+      hint = `Starts with "${ans.slice(0, Math.min(3, ans.length))}..." (${ans.length} chars)`;
+    } else {
+      hint = `Hint: "${words[0]} ${words.slice(1).map(w => w[0] + '…').join(' ')}" (${words.length} words)`;
+    }
+    const clueBox = document.getElementById('clueBox');
+    clueBox.textContent = '💡 ' + hint;
+    clueBox.classList.add('show');
+  }
+
+  function speakCurrent(side) {
+    if (!('speechSynthesis' in window) || activeDeck.length === 0) return;
+    window.speechSynthesis.cancel();
+    const text = side === 'q' ? activeDeck[currentIndex].q : activeDeck[currentIndex].a;
+    const utter = new SpeechSynthesisUtterance(cleanSpeech(text));
+    utter.lang = 'en-IN';
+    utter.rate = 0.95;
+    window.speechSynthesis.speak(utter);
+  }
+
+  function rateCard(level) {
+    if (activeDeck.length === 0) return;
+    const card = activeDeck[currentIndex];
+
+    if (level === 'hard') {
+      userStats.hard[card.id] = true;
+      delete userStats.mastered[card.id];
+      playTone('hard');
+      // Spaced repetition: re-insert this card 4 positions later if not already queued
+      const insertAt = Math.min(currentIndex + 4, activeDeck.length);
+      activeDeck.splice(insertAt, 0, card);
+      showToast('🔴 Marked Hard — We will repeat this card in 4 turns!');
+    } else if (level === 'good') {
+      userStats.xp += 5;
+      delete userStats.hard[card.id];
+      playTone('good');
+      showToast('🟡 Good job! +5 XP');
+    } else if (level === 'mastered') {
+      if (!userStats.mastered[card.id]) {
+        userStats.xp += 10;
+        userStats.streak += 1;
+        if (userStats.streak % 10 === 0) launchConfetti();
+      }
+      userStats.mastered[card.id] = true;
+      delete userStats.hard[card.id];
+      playTone('good');
+      showToast('🟢 Mastered! +10 XP 🔥');
+    }
+
+    saveStats();
+    updateHUD();
+    nextCard();
+  }
+
+  function nextCard() {
+    if (activeDeck.length === 0) return;
+    isFlipped = false;
+    document.getElementById('flashcardEl').classList.remove('flipped');
+    currentIndex = (currentIndex + 1) % activeDeck.length;
+    setTimeout(renderCard, 120);
+  }
+
+  function prevCard() {
+    if (activeDeck.length === 0) return;
+    isFlipped = false;
+    document.getElementById('flashcardEl').classList.remove('flipped');
+    currentIndex = (currentIndex - 1 + activeDeck.length) % activeDeck.length;
+    setTimeout(renderCard, 120);
+  }
+
+  function resetChapterProgress() {
+    if (!confirm('Reset mastered & hard progress for this chapter?')) return;
+    const chCards = flashcardsDB[currentChapter] || [];
+    chCards.forEach(c => {
+      delete userStats.mastered[c.id];
+      delete userStats.hard[c.id];
+    });
+    saveStats();
+    updateHUD();
+    renderCard();
+    showToast('🗑️ Chapter progress cleared');
+  }
+
+  function openQuizPortal() {
+    if (QUIZ_PORTAL_URL && QUIZ_PORTAL_URL !== '#') {
+      window.open(QUIZ_PORTAL_URL, '_blank');
+    } else {
+      showToast('🎯 Class 9 Quiz Arena link will be connected right after Step 2!');
+    }
+  }
+
+  function shareProgressWhatsApp() {
+    const name = localStorage.getItem(KEY_NAME) || 'Student';
+    const chTitle = chapterMeta[currentChapter].title;
+    const chCards = flashcardsDB[currentChapter] || [];
+    const chMastered = chCards.filter(c => userStats.mastered[c.id]).length;
+    const msg = `🦉 *GYANU AI By Rishi Sir — CBSE Class 9 Science*\n👤 Student: *${name}*\n📘 ${chTitle}\n🟢 Mastered: *${chMastered}/${chCards.length} Cards*\n⚡ Total XP: *${userStats.xp}* | 🔥 Streak: *${userStats.streak}*\n\nJoin me in revising Class 9 Science Smart Flashcards!`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  function toggleSound() {
+    soundOn = !soundOn;
+    document.getElementById('soundBtn').innerHTML = soundOn ? '🔊 Sound ON' : '🔇 Muted';
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    try { localStorage.setItem(KEY_DARK, isDark); } catch (e) {}
+    document.getElementById('themeBtn').innerHTML = isDark ? '☀️ Light' : '🌙 Night';
+  }
+
+  function setupGesturesAndKeys() {
+    let startX = 0;
+    const stage = document.getElementById('cardStage');
+    stage.addEventListener('touchstart', e => { startX = e.changedTouches[0].screenX; }, { passive: true });
+    stage.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].screenX - startX;
+      if (Math.abs(diff) > 55) {
+        if (diff < 0) nextCard();
+        else prevCard();
+      }
+    }, { passive: true });
+
+    document.addEventListener('keydown', e => {
+      if (document.activeElement.tagName === 'INPUT') return;
+      if (e.code === 'Space') { e.preventDefault(); flipCard(); }
+      else if (e.code === 'ArrowRight') nextCard();
+      else if (e.code === 'ArrowLeft') prevCard();
+    });
+  }
+
+  function launchConfetti() {
+    const colors = ['#4f46e5', '#7c3aed', '#14b8a6', '#f59e0b', '#ec4899'];
+    for (let i = 0; i < 32; i++) {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      el.style.animationDuration = (1.4 + Math.random() * 1.4) + 's';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 2900);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', initApp);
+</script>
+</body>
+</html>
